@@ -1,0 +1,49 @@
+
+<!-- ==================================================
+     BANNER PERFIL ANAVRIN
+================================================== -->
+
+<section class="anavrin-profile-cover">
+
+    <!-- FOTO AO FUNDO -->
+    <div class="anavrin-cover-photo">
+
+        <img
+            src="{{ url_for(
+                'static',
+                filename=terapeuta.foto_perfil or terapeuta.foto_apresentacao
+            ) }}"
+            alt="Foto de {{ terapeuta.nome }}"
+        >
+
+    </div>
+
+    <!-- ESCURECIMENTO SUAVE -->
+    <div class="anavrin-cover-overlay"></div>
+
+    <!-- TEXTOS NA FRENTE -->
+    <div class="anavrin-cover-content">
+
+        <span class="anavrin-cover-eyebrow">
+            ESSÊNCIA ANAVRIN
+        </span>
+
+        <h1>
+            {{ terapeuta.nome.split()[0] }}
+        </h1>
+
+        <span class="anavrin-cover-profession">
+            TERAPEUTA
+        </span>
+
+        <p>
+            Uma pausa para relaxar e renovar as energias.
+        </p>
+
+        <span class="anavrin-cover-brand">
+            ANAVRIN
+        </span>
+
+    </div>
+
+</section>

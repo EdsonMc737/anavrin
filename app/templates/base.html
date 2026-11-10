@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#f5f5f5">
+
+    <meta name="description" content="Anavrin Spa & Bem-Estar. Experiências exclusivas de relaxamento, cuidado e bem-estar.">
+
+    <title>Anavrin | Spa & Bem-Estar</title>
+
+    <!-- CSS PRINCIPAL -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+    <!-- FONT AWESOME -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    {% block extra_css %}{% endblock %}
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    {% include 'include/navmenu.html' %}
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- FOOTER -->
+    {% include 'include/rodape.html' %}
+
+    <!-- JAVASCRIPT DA NAVBAR -->
+    <script
+        src="{{ url_for('static', filename='js/include/navbar.js') }}"
+        defer
+    ></script>
+
+    {% block extra_js %}{% endblock %}
+
+</body>
+</html>

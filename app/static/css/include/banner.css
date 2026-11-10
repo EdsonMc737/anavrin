@@ -1,0 +1,406 @@
+
+/* =====================================
+   HERO SECTION
+===================================== */
+
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 680px;
+    min-height: min(680px, calc(100svh - 90px));
+    height: calc(100vh - 90px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url("/static/img/banner/Banner.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+    text-align: center;
+}
+
+/* SOBREPOSIÇÃO */
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    background: linear-gradient(
+        90deg,
+        rgba(20, 19, 16, 0.65) 0%,
+        rgba(20, 19, 16, 0.48) 50%,
+        rgba(20, 19, 16, 0.65) 100%
+    );
+}
+
+/* CONTEÚDO */
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(90%, 1000px);
+    padding: 40px 20px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff;
+}
+
+/* ETIQUETA */
+
+.hero-label {
+    display: inline-block;
+
+    padding: 13px 25px;
+    margin-bottom: 35px;
+
+    border: 1px solid rgba(218, 196, 151, 0.8);
+
+    color: #e3d1ad;
+
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* TÍTULO */
+
+.hero-content h1 {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    font-family: Georgia, serif;
+    font-size: clamp(42px, 7vw, 100px);
+    font-weight: 400;
+
+    line-height: 1.1;
+    letter-spacing: -3px;
+    text-align: center;
+
+    overflow-wrap: break-word;
+}
+
+.hero-content h1 span {
+    color: #d3b783;
+    font-style: italic;
+}
+
+/* DESCRIÇÃO */
+
+.hero-description {
+    width: 100%;
+    max-width: 540px;
+
+    margin: 25px auto 0;
+
+    color: rgba(255,255,255,0.85);
+
+    font-size: clamp(14px, 1.2vw, 16px);
+    line-height: 1.9;
+    font-weight: 300;
+    text-align: center;
+}
+
+/* BOTÕES */
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+
+    margin-top: 40px;
+}
+
+.hero-btn-primary,
+.hero-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 54px;
+    padding: 0 28px;
+
+    text-decoration: none;
+    text-transform: uppercase;
+
+    font-size: 10px;
+    letter-spacing: 1.5px;
+
+    transition: all 0.3s ease;
+}
+
+/* BOTÃO PRINCIPAL */
+
+.hero-btn-primary {
+    background: #b49a68;
+    border: 1px solid #b49a68;
+    color: #fff;
+}
+
+.hero-btn-primary:hover {
+    background: #9c8050;
+    border-color: #9c8050;
+}
+
+/* BOTÃO SECUNDÁRIO */
+
+.hero-btn-secondary {
+    border: 1px solid rgba(255,255,255,0.7);
+    color: #fff;
+}
+
+.hero-btn-secondary:hover {
+    background: #fff;
+    color: #292720;
+}
+
+/* INDICADOR INFERIOR */
+
+.hero-indicator {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    z-index: 2;
+    white-space: nowrap;
+}
+
+.hero-indicator span {
+    width: 35px;
+    height: 1px;
+    background: #d3b783;
+}
+
+.hero-indicator p {
+    color: #fff;
+
+    font-size: 9px;
+    letter-spacing: 3px;
+    margin: 0;
+}
+
+/* =====================================
+   NOTEBOOKS E TABLETS
+===================================== */
+
+@media (max-width: 1024px) {
+
+    .hero {
+        min-height: 620px;
+        height: calc(100svh - 80px);
+
+        background-position: center;
+    }
+
+    .hero-content {
+        width: 92%;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(48px, 8vw, 76px);
+    }
+
+    .hero-description {
+        max-width: 500px;
+    }
+}
+
+/* =====================================
+   TABLETS PEQUENOS
+===================================== */
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 600px;
+        height: calc(100svh - 75px);
+
+        background-position: 60% center;
+    }
+
+    .hero-overlay {
+        background: rgba(20, 19, 16, 0.58);
+    }
+
+    .hero-content {
+        width: 90%;
+        padding: 35px 10px;
+    }
+
+    .hero-label {
+        padding: 12px 20px;
+        font-size: 9px;
+        letter-spacing: 2px;
+        margin-bottom: 28px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(45px, 8vw, 65px);
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+        line-height: 1.8;
+        margin-top: 20px;
+    }
+
+    .hero-buttons {
+        gap: 12px;
+        margin-top: 30px;
+    }
+}
+
+/* =====================================
+   CELULARES
+===================================== */
+
+@media (max-width: 650px) {
+
+    .hero {
+        min-height: 620px;
+        height: calc(100svh - 75px);
+
+        background-position: 60% center;
+    }
+
+    .hero-content {
+        width: 92%;
+        padding: 25px 5px;
+    }
+
+    .hero-label {
+        font-size: 8px;
+        padding: 11px 15px;
+        letter-spacing: 2px;
+        margin-bottom: 25px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(40px, 10vw, 58px);
+        line-height: 1.12;
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        max-width: 420px;
+        font-size: 14px;
+        line-height: 1.8;
+        margin-top: 20px;
+    }
+
+    .hero-buttons {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        margin-top: 28px;
+    }
+
+    .hero-btn-primary,
+    .hero-btn-secondary {
+        width: 100%;
+        max-width: 320px;
+        min-height: 52px;
+        padding: 0 15px;
+        font-size: 9px;
+    }
+
+    .hero-indicator {
+        bottom: 20px;
+        gap: 10px;
+    }
+
+    .hero-indicator span {
+        width: 25px;
+    }
+
+    .hero-indicator p {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+}
+
+/* =====================================
+   CELULARES PEQUENOS
+===================================== */
+
+@media (max-width: 380px) {
+
+    .hero {
+        min-height: 580px;
+    }
+
+    .hero-content {
+        width: 95%;
+    }
+
+    .hero-label {
+        font-size: 7px;
+        padding: 10px 12px;
+        letter-spacing: 1.5px;
+    }
+
+    .hero-content h1 {
+        font-size: 39px;
+        letter-spacing: -1.5px;
+    }
+
+    .hero-description {
+        font-size: 13px;
+    }
+
+    .hero-btn-primary,
+    .hero-btn-secondary {
+        max-width: 280px;
+        font-size: 8px;
+    }
+}
+
+/* =====================================
+   TELAS MUITO BAIXAS
+===================================== */
+
+@media (max-height: 550px) and (min-width: 651px) {
+
+    .hero {
+        min-height: 500px;
+        height: auto;
+    }
+
+    .hero-content {
+        padding: 45px 20px 65px;
+    }
+
+    .hero-label {
+        margin-bottom: 18px;
+    }
+
+    .hero-buttons {
+        margin-top: 22px;
+    }
+
+    .hero-indicator {
+        bottom: 12px;
+    }
+}

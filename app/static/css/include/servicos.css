@@ -1,0 +1,386 @@
+
+/* ==============================
+   SEÇÃO DE SERVIÇOS
+============================== */
+
+.services-section {
+    width: 100%;
+    padding: 110px 6% 120px;
+    background: #faf9f6;
+    box-sizing: border-box;
+}
+
+/* CABEÇALHO */
+
+.services-header {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto 65px;
+    text-align: center;
+}
+
+.services-label {
+    display: block;
+    margin-bottom: 20px;
+    color: #ad9362;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.services-header h2 {
+    margin: 0;
+    color: #292720;
+    font-family: Georgia, serif;
+    font-size: clamp(36px, 4vw, 55px);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.services-header h2 span {
+    color: #b49a68;
+    font-style: italic;
+}
+
+.services-header p {
+    max-width: 570px;
+    margin: 22px auto 0;
+    color: #77736a;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* GRID */
+
+.services-grid {
+    width: 100%;
+    max-width: 1450px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+/* CARD */
+
+.service-card {
+    position: relative;
+    isolation: isolate;
+    min-width: 0;
+    min-height: 430px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 30px 25px;
+    box-sizing: border-box;
+
+    overflow: hidden;
+    border: 1px solid rgba(180, 154, 104, 0.3);
+    border-radius: 4px;
+
+    background: #292720;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+/* IMAGEM DE FUNDO */
+
+.service-image {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.service-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.7s ease;
+}
+
+/* DEGRADÊ SOBRE A IMAGEM */
+
+.service-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(20, 20, 18, 0.15) 0%,
+        rgba(20, 20, 18, 0.35) 35%,
+        rgba(20, 20, 18, 0.88) 100%
+    );
+
+    transition: background 0.4s ease;
+}
+
+/* NÚMERO */
+
+.service-number {
+    color: #d6b77a;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    opacity: 0.95;
+}
+
+/* CONTEÚDO */
+
+.service-content {
+    margin-top: 45px;
+    position: relative;
+    z-index: 1;
+}
+
+.service-category {
+    display: block;
+    margin-bottom: 15px;
+
+    color: #d6b77a;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.service-content h3 {
+    margin: 0 0 18px;
+
+    color: #fff;
+    font-family: Georgia, serif;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 1.3;
+
+    overflow-wrap: break-word;
+}
+
+.service-content p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* HOVER DOS CARDS */
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: #c9a96e;
+    box-shadow: 0 20px 40px rgba(40, 35, 25, 0.2);
+}
+
+.service-card:hover .service-image img {
+    transform: scale(1.08);
+}
+
+/* ==============================
+   BOTÃO GERAL DE EXPERIÊNCIAS
+============================== */
+
+.services-footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 55px auto 0;
+}
+
+.services-main-button {
+    min-height: 54px;
+    padding: 0 32px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #b49a68;
+    background: transparent;
+
+    color: #9d8251;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 2px;
+
+    transition:
+        background 0.35s ease,
+        color 0.35s ease,
+        border-color 0.35s ease,
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.services-main-button span {
+    font-size: 18px;
+    line-height: 1;
+
+    transition: transform 0.35s ease;
+}
+
+.services-main-button:hover {
+    background: #b49a68;
+    border-color: #b49a68;
+    color: #fff;
+
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(180, 154, 104, 0.2);
+}
+
+.services-main-button:hover span {
+    transform: translate(4px, -3px);
+}
+
+/* ==============================
+   NOTEBOOKS
+============================== */
+
+@media (max-width: 1100px) {
+    .services-section {
+        padding: 90px 5%;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .service-card {
+        min-height: 400px;
+    }
+}
+
+/* ==============================
+   TABLETS E CELULARES
+============================== */
+
+@media (max-width: 650px) {
+    .services-section {
+        padding: 70px 6%;
+    }
+
+    .services-header {
+        margin-bottom: 40px;
+    }
+
+    .services-label {
+        font-size: 9px;
+    }
+
+    .services-header h2 {
+        font-size: 36px;
+    }
+
+    .services-header p {
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .service-card {
+        min-height: 390px;
+        padding: 25px 22px;
+    }
+
+    .service-content {
+        margin-top: 35px;
+    }
+
+    .service-content h3 {
+        font-size: 22px;
+    }
+
+    /* BOTÃO NO CELULAR */
+
+    .services-footer {
+        margin-top: 38px;
+    }
+
+    .services-main-button {
+        width: 100%;
+        max-width: 340px;
+        min-height: 52px;
+        padding: 0 18px;
+        gap: 14px;
+
+        font-size: 9px;
+        letter-spacing: 1.5px;
+    }
+}
+
+/* ==============================
+   CELULARES PEQUENOS
+============================== */
+
+@media (max-width: 380px) {
+    .services-section {
+        padding: 55px 16px;
+    }
+
+    .services-header h2 {
+        font-size: 31px;
+    }
+
+    .service-card {
+        min-height: 360px;
+        padding: 22px 18px;
+    }
+
+    .services-main-button {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+}
+
+/* ==============================
+   DISPOSITIVOS SEM HOVER
+============================== */
+
+@media (hover: none) {
+    .service-card:hover {
+        transform: none;
+    }
+
+    .service-card:hover .service-image img {
+        transform: none;
+    }
+
+    .services-main-button:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+/* ACESSIBILIDADE */
+
+@media (prefers-reduced-motion: reduce) {
+    .service-card,
+    .service-image img,
+    .services-main-button,
+    .services-main-button span {
+        transition: none;
+    }
+}

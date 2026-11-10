@@ -1,0 +1,72 @@
+
+<section class="team-members" id="equipe">
+
+    <div class="team-grid">
+
+        {% for terapeuta in terapeutas %}
+
+        <a
+            href="{{ url_for('home.perfil_terapeuta', terapeuta_id=terapeuta.id) }}"
+            class="team-card-link"
+            aria-label="Conheça o perfil de {{ terapeuta.nome }}"
+            title="Ver perfil de {{ terapeuta.nome }}"
+        >
+
+            <article class="team-card">
+
+                <div class="team-card-image">
+
+                    <img
+                        src="{{ url_for('static', filename=terapeuta.foto_perfil or terapeuta.foto_apresentacao) }}"
+                        alt="Foto de {{ terapeuta.nome }}"
+                        loading="lazy"
+                    >
+
+                    <span class="team-card-number">
+                        {{ "%02d"|format(loop.index) }}
+                    </span>
+
+                </div>
+
+                <div class="team-card-info">
+
+                    <span class="team-card-specialty">
+                        {% for atendimento in terapeuta.tipos_atendimento %}
+                            {{ atendimento }}{% if not loop.last %} · {% endif %}
+                        {% else %}
+                            EQUIPE ANAVRIN
+                        {% endfor %}
+                    </span>
+
+                    <h3>{{ terapeuta.nome }}</h3>
+
+                    {% if terapeuta.status_equipe == "NOVA" %}
+                        <span class="team-status">Nova integrante</span>
+                    {% elif terapeuta.status_equipe == "RET" %}
+                        <span class="team-status">De volta à Anavrin</span>
+                    {% elif terapeuta.status_equipe == "VET" %}
+                        <span class="team-status">Veterana Anavrin</span>
+                    {% endif %}
+
+                    <span class="team-card-action">
+                        Conhecer perfil <span> </span>
+                    </span>
+
+                </div>
+
+            </article>
+
+        </a>
+
+        {% else %}
+
+            <p class="team-empty">
+                Nossa equipe está sendo atualizada.
+                Em breve você poderá conhecer nossas profissionais.
+            </p>
+
+        {% endfor %}
+
+    </div>
+
+</section>

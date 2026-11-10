@@ -1,0 +1,48 @@
+
+<nav class="navbar" id="navbar">
+    <div class="navbar-container">
+
+        <!-- LOGO -->
+        <a href="{{ url_for('home.home_index') }}" class="navbar-logo">
+            ANAVRIN
+            <span>SPA & BEM-ESTAR</span>
+        </a>
+
+        <!-- LINKS -->
+        <ul class="navbar-menu" id="navbarMenu">
+            <li><a href="{{ url_for('home.home_index') }}#massagens">Massagens</a></li>
+            <li><a href="{{ url_for('home.terapeutas_pro') }}">Terapeutas</a></li>
+            <li><a href="{{ url_for('home.home_index') }}#unidades">Unidades</a></li>
+            <li><a href="{{ url_for('home.home_index') }}#a-casa">A Casa</a></li>
+
+            <li class="mobile-agendamento">
+                <a href="{{ url_for('home.home_index') }}#agendamento">
+                    Agendar experiência
+                </a>
+            </li>
+        </ul>
+
+        <!-- BOTÃO DESKTOP -->
+        <a href="{{ url_for('home.home_index') }}#agendamento"
+           class="navbar-button">
+            Agendar experiência
+        </a>
+
+        <!-- HAMBÚRGUER -->
+        <button
+            class="navbar-toggle"
+            id="navbarToggle"
+            type="button"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="navbarMenu">
+
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </div>
+</nav>
+
+<script src="{{ url_for('static', filename='js/include/navmenu.js') }}" defer></script>

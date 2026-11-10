@@ -1,0 +1,169 @@
+
+{
+  "catalogo_atendimentos": [
+    "Four Hands",
+    "Massagem Relaxante",
+    "Jacuzzi & Ofurô — Sessão Premium",
+    "Massagem Personalizada",
+    "Sessão Casal"
+  ],
+  "status_equipe_disponiveis": [
+    "NOVA",
+    "RET",
+    "VET"
+  ],
+  "terapeutas": [
+    {
+      "id": "ANV-TRP-0001",
+      "status_equipe": "NOVA",
+      "foto_apresentacao": "img/terapeutas/RitaLorena/principal/RitaLorena.jpg",
+      "foto_perfil": "img/terapeutas/RitaLorena/perfil/RitaLorena.jpg",
+      "nome": "Rita Lorena Marcela",
+      "signo": "Aquário",
+      "unidade": "Jardins",
+      "idade": 23,
+      "experiencia": "",
+      "tipos_atendimento": [ 
+        "Four Hands",
+        "Massagem Relaxante",
+        "Jacuzzi & Ofurô — Sessão Premium"
+      ]
+    },
+    {
+      "id": "ANV-TRP-0002",
+      "status_equipe": "NOVA",
+      "foto_apresentacao": "img/terapeutas/AndreaBrito/principal/AndreaBrito.jpg",
+      "foto_perfil": "img/terapeutas/AndreaBrito/perfil/AndreaBrito.jpg",
+      "nome": "Andrea Lavínia Ester Brito",
+      "signo": "Touro",
+      "unidade": "Jardins",
+      "idade": 25,
+      "experiencia": "",
+      "tipos_atendimento": [ 
+        "Four Hands",
+        "Massagem Relaxante",
+        "Massagem Personalizada",
+        "Sessão Casal"]
+    },
+    {
+      "id": "ANV-TRP-0003",
+      "status_equipe": "NOVA",
+      "foto_apresentacao": "img/terapeutas/AntonellaRosa/principal/AntonellaRosa.jpg",
+      "foto_perfil": "img/terapeutas/AntonellaRosa/perfil/AntonellaRosa.jpg",
+      "nome": "Antonella Marli Fátima da Rosa",
+      "signo": "Escorpião",
+      "unidade": "",
+      "idade": 27,
+      "experiencia": "",
+      "tipos_atendimento": []
+    },
+    {
+      "id": "ANV-TRP-0004",
+      "status_equipe": "NOVA",
+      "foto_apresentacao": "img/terapeutas/CarolineDrumond/principal/CarolineDrumond.jpg",
+      "foto_perfil": "img/terapeutas/CarolineDrumond/perfil/CarolineDrumond.jpg",
+      "nome": "Caroline Daiane Drumond",
+      "signo": "Libra",
+      "unidade": "Jardins",
+      "idade": 28,
+      "experiencia": "",
+      "tipos_atendimento": []
+    },
+    {
+      "id": "ANV-TRP-0005",
+      "status_equipe": "NOVA",
+      "foto_apresentacao": "img/terapeutas/CatarinaLuna/principal/CatarinaLuna.jpg",
+      "foto_perfil": "img/terapeutas/CatarinaLuna/perfil/CatarinaLuna.jpg",
+      "nome": "Catarina Luna Rosângela",
+      "signo": "Leão",
+      "unidade": "Jardins",
+      "idade": null,
+      "experiencia": "",
+      "tipos_atendimento": []
+    },
+    {
+      "id": "ANV-TRP-0006",
+      "status_equipe": "NOVA",
+      "foto_apresentacao": "img/terapeutas/MariaMata/principal/MariaMata.jpg",
+      "foto_perfil": "img/terapeutas/MariaMata/perfil/MariaMata.jpg",
+      "nome": "Maria Sophia Aline da Mata",
+      "signo": "Aries",
+      "unidade": "Jardins",
+      "idade": null,
+      "experiencia": "",
+      "tipos_atendimento": []
+    },
+    {
+      "id": "ANV-TRP-0007",
+      "status_equipe": "NOVA",
+      "foto_apresentacao": "img/terapeutas/IsadoraCunha/principal/IsadoraCunha.jpg",
+      "foto_perfil": "img/terapeutas/IsadoraCunha/perfil/IsadoraCunha.jpg",
+      "nome": "Isadora Caroline da Cunha",
+      "signo": "Câncer",
+      "unidade": "Jardins",
+      "idade": 30,
+      "experiencia": "",
+      "tipos_atendimento": []
+    },
+    {
+      "id": "ANV-TRP-0008",
+      "status_equipe": "NOVA",
+      "foto_apresentacao": "img/terapeutas/SarahAlmeida/principal/SarahAlmeida.jpg",
+      "foto_perfil": "img/terapeutas/SarahAlmeida/perfil/SarahAlmeida.jpg",
+      "nome": "Sarah Ester Almeida",
+      "signo": "Capricórnio",
+      "unidade": "Jardins",
+      "idade": 30,
+      "experiencia": "",
+      "tipos_atendimento": []
+    },
+    {
+      "id": "ANV-TRP-0009",
+      "status_equipe": "NOVA",
+      "foto_apresentacao": "img/terapeutas/IsabellyLaura/principal/IsabellyLaura.jpg",
+      "foto_perfil": "img/terapeutas/IsabellyLaura/perfil/IsabellyLaura.jpg",
+      "nome": "Isabelly Silvana Laura Gomes",
+      "signo": "Escorpião",
+      "unidade": "Jardins",
+      "idade": 30,
+      "experiencia": "",
+      "tipos_atendimento": []
+    },
+    {
+      "id": "ANV-TRP-0010",
+      "status_equipe": "NOVA",
+      "foto_apresentacao": "img/terapeutas/LaraAurora/principal/LaraAurora.jpg",
+      "foto_perfil": "img/terapeutas/LaraAurora/perfil/LaraAurora.jpg",
+      "nome": "Lara Pietra Aurora",
+      "signo": "Gêmeos",
+      "unidade": "Jardins",
+      "idade": 29,
+      "experiencia": "",
+      "tipos_atendimento": []
+    },
+    {
+      "id": "ANV-TRP-0011",
+      "status_equipe": "NOVA",
+      "foto_apresentacao": "img/terapeutas/SophiaBarbosa/principal/SophiaBarbosa01.jpg",
+      "foto_perfil": "img/terapeutas/SophiaBarbosa/perfil/SophiaBarbosa.jpg",
+      "nome": "Sophia Vanessa Nina Barbosa",
+      "signo": "Escorpião",
+      "unidade": "Jardins",
+      "idade": 25,
+      "experiencia": "",
+      "tipos_atendimento": []
+    },
+    {
+      "id": "ANV-TRP-0012",
+      "status_equipe": "NOVA",
+      "foto_apresentacao": "img/terapeutas/IsabellyGomes/principal/IsabellyGomes.jpg",
+      "foto_perfil": "img/terapeutas/IsabellyGomes/perfil/IsabellyGomes.jpg",
+      "nome": "Ayla Josefa Daiane Viana",
+      "signo": "Câncer",
+      "unidade": "Jardins",
+      "idade": 27,
+      "experiencia": "",
+      "tipos_atendimento": []
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+
+/* ==========================================
+   CARTÕES EDITORIAIS — ANAVRIN
+   Foto preenchendo todo o cartão
+   Informações sobrepostas à imagem
+========================================== */
+
+.team-members {
+    padding: 35px 8% 120px;
+    background: #f7f6f1;
+    box-sizing: border-box;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* LINK DO CARTÃO */
+
+.team-card-link {
+    display: block;
+    min-width: 0;
+    color: inherit;
+    text-decoration: none;
+}
+
+/* CARTÃO */
+
+.team-card {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    background: #35483b;
+    isolation: isolate;
+    transition: transform .5s ease;
+}
+
+.team-card-link:hover .team-card {
+    transform: translateY(-6px);
+}
+
+/* FOTOGRAFIA */
+
+.team-card-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #eae7dc;
+}
+
+.team-card-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 1s cubic-bezier(.2,.7,.2,1);
+}
+
+.team-card-link:hover .team-card-image img {
+    transform: scale(1.06);
+}
+
+/* DEGRADÊ PARA LEITURA DO TEXTO */
+
+.team-card::after {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    content: "";
+    background: linear-gradient(
+        to top,
+        rgba(24, 37, 28, .92) 0%,
+        rgba(24, 37, 28, .65) 25%,
+        rgba(24, 37, 28, .12) 58%,
+        rgba(24, 37, 28, 0) 100%
+    );
+    pointer-events: none;
+}
+
+/* NUMERAÇÃO */
+
+.team-card-number {
+    position: absolute;
+    z-index: 2;
+    top: 22px;
+    left: 22px;
+    color: #fff;
+    font-family: Georgia, serif;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+/* INFORMAÇÕES SOBRE A FOTO */
+
+.team-card-info {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 35px 28px;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+/* ESPECIALIDADES */
+
+.team-card-specialty {
+    display: block;
+    margin-bottom: 12px;
+    color: #d4d9c9;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    line-height: 1.8;
+    text-transform: uppercase;
+}
+
+/* NOME */
+
+.team-card-info h3 {
+    margin: 0 0 13px;
+    color: #fff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(23px, 2.3vw, 29px);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+/* DESCRIÇÃO */
+
+.team-card-info p {
+    margin: 0;
+    color: rgba(255,255,255,.85);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* STATUS */
+
+.team-status {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 7px 12px;
+    border: 1px solid rgba(255,255,255,.45);
+    border-radius: 30px;
+    color: #fff;
+    font-size: 9px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+/* FOCO DE ACESSIBILIDADE */
+
+.team-card-link:focus-visible {
+    outline: 2px solid #858c72;
+    outline-offset: 5px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 1050px) {
+    .team-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .team-card {
+        height: 460px;
+    }
+}
+
+@media (max-width: 650px) {
+    .team-members {
+        padding: 20px 20px 80px;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+        max-width: 440px;
+        gap: 25px;
+    }
+
+    .team-card {
+        height: auto;
+        aspect-ratio: 4 / 5;
+    }
+
+    .team-card-info {
+        padding: 28px 22px;
+    }
+
+    .team-card-info h3 {
+        font-size: 27px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .team-card,
+    .team-card-image img {
+        transition: none;
+    }
+}

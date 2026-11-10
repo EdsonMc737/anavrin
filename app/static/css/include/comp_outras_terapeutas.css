@@ -1,0 +1,339 @@
+
+/* =========================================
+   OUTRAS TERAPEUTAS — ANAVRIN
+   Editorial Premium
+========================================= */
+
+.anavrin-other-therapists {
+    width: 100%;
+    padding: 100px 0 110px;
+    overflow: hidden;
+    background: #EAE4D8;
+}
+
+/* =========================================
+   CABEÇALHO
+========================================= */
+
+.other-therapists-header {
+    max-width: 1200px;
+    margin: 0 auto 65px;
+    padding: 0 7%;
+    text-align: left;
+}
+
+.other-therapists-header > span {
+    display: block;
+    margin-bottom: 18px;
+
+    color: #A18D60;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.other-therapists-header h2 {
+    margin: 0;
+
+    color: #45472F;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(48px, 7vw, 78px);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -1px;
+}
+
+.other-therapists-header h2 em {
+    font-weight: 400;
+    font-style: italic;
+}
+
+.other-therapists-header p {
+    max-width: 440px;
+    margin: 22px 0 0;
+
+    color: #77715E;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 21px;
+    line-height: 1.4;
+}
+
+/* =========================================
+   JANELA DO CARROSSEL
+========================================= */
+
+.other-therapists-window {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Degradê suave nas laterais */
+
+.other-therapists-window::before,
+.other-therapists-window::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 65px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.other-therapists-window::before {
+    left: 0;
+    background: linear-gradient(
+        to right,
+        #EAE4D8 0%,
+        rgba(234, 228, 216, 0) 100%
+    );
+}
+
+.other-therapists-window::after {
+    right: 0;
+    background: linear-gradient(
+        to left,
+        #EAE4D8 0%,
+        rgba(234, 228, 216, 0) 100%
+    );
+}
+
+/* =========================================
+   FAIXA ANIMADA
+========================================= */
+
+.other-therapists-track {
+    display: flex;
+    width: max-content;
+
+    animation: anavrin-therapists-scroll 45s linear infinite;
+
+    will-change: transform;
+}
+
+.other-therapists-group {
+    display: flex;
+    align-items: flex-start;
+    flex-shrink: 0;
+
+    gap: 30px;
+    padding: 0 15px;
+}
+
+/* Movimento contínuo da direita para esquerda */
+
+@keyframes anavrin-therapists-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pausa ao passar o mouse */
+
+.other-therapists-window:hover .other-therapists-track {
+    animation-play-state: paused;
+}
+
+/* =========================================
+   CARD
+========================================= */
+
+.other-therapist-card {
+    display: flex;
+    flex-direction: column;
+
+    width: 270px;
+    flex-shrink: 0;
+
+    text-decoration: none;
+    color: #45472F;
+}
+
+/* =========================================
+   FOTOGRAFIA
+========================================= */
+
+.other-therapist-photo {
+    width: 100%;
+    height: 350px;
+
+    overflow: hidden;
+    background: #DDD4C4;
+}
+
+.other-therapist-photo img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center top;
+
+    transition: transform 0.8s cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+
+/* Zoom delicado */
+
+.other-therapist-card:hover .other-therapist-photo img {
+    transform: scale(1.055);
+}
+
+/* =========================================
+   NOME DA TERAPEUTA
+========================================= */
+
+.other-therapist-name {
+    display: block;
+
+    margin-top: 20px;
+
+    color: #45472F;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 29px;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.1;
+
+    transition: color 0.35s ease;
+}
+
+/* =========================================
+   IDENTIFICAÇÃO
+========================================= */
+
+.other-therapist-role {
+    display: block;
+
+    margin-top: 9px;
+
+    color: #A18D60;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* Efeito no hover */
+
+.other-therapist-card:hover .other-therapist-name {
+    color: #9A8253;
+}
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (max-width: 768px) {
+
+    .anavrin-other-therapists {
+        padding: 75px 0 85px;
+    }
+
+    .other-therapists-header {
+        margin-bottom: 45px;
+        padding: 0 6%;
+    }
+
+    .other-therapists-header h2 {
+        font-size: clamp(46px, 9vw, 65px);
+    }
+
+    .other-therapists-header p {
+        font-size: 19px;
+    }
+
+    .other-therapists-group {
+        gap: 22px;
+    }
+
+    .other-therapist-card {
+        width: 230px;
+    }
+
+    .other-therapist-photo {
+        height: 300px;
+    }
+
+    .other-therapist-name {
+        font-size: 26px;
+    }
+
+    .other-therapists-track {
+        animation-duration: 38s;
+    }
+}
+
+/* =========================================
+   CELULARES
+========================================= */
+
+@media (max-width: 480px) {
+
+    .anavrin-other-therapists {
+        padding: 65px 0 75px;
+    }
+
+    .other-therapists-header {
+        margin-bottom: 38px;
+    }
+
+    .other-therapists-header > span {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .other-therapists-header h2 {
+        font-size: 47px;
+    }
+
+    .other-therapists-header p {
+        font-size: 18px;
+    }
+
+    .other-therapists-group {
+        gap: 18px;
+        padding: 0 10px;
+    }
+
+    .other-therapist-card {
+        width: 195px;
+    }
+
+    .other-therapist-photo {
+        height: 265px;
+    }
+
+    .other-therapist-name {
+        margin-top: 15px;
+        font-size: 24px;
+    }
+
+    .other-therapists-track {
+        animation-duration: 32s;
+    }
+}
+
+/* =========================================
+   ACESSIBILIDADE
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .other-therapists-track {
+        animation: none;
+        transform: none;
+    }
+
+    .other-therapist-photo img {
+        transition: none;
+    }
+}

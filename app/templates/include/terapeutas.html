@@ -1,0 +1,81 @@
+<div class="therapists-grid">
+
+    {% for terapeuta in terapeutas[:5] %}
+
+        <a
+            href="{{ url_for('home.perfil_terapeuta', terapeuta_id=terapeuta.id) }}"
+            class="therapist-card-link"
+            aria-label="Conheça o perfil de {{ terapeuta.nome or 'Terapeuta Anavrin' }}"
+            title="Ver perfil de {{ terapeuta.nome or 'Terapeuta Anavrin' }}"
+        >
+
+            <article class="therapist-card">
+
+                <div class="therapist-image">
+
+                    {% if terapeuta.foto_apresentacao %}
+                        <img
+                            src="{{ url_for('static', filename=terapeuta.foto_apresentacao) }}"
+                            alt="Foto de {{ terapeuta.nome or 'Terapeuta Anavrin' }}"
+                            loading="lazy"
+                        >
+                    {% else %}
+                        <img
+                            src="{{ url_for('static', filename='img/terapeutas/foto-padrao.jpg') }}"
+                            alt="Terapeuta Anavrin"
+                            loading="lazy"
+                        >
+                    {% endif %}
+
+                    <span class="therapist-number">
+                        {{ "%02d"|format(loop.index) }}
+                    </span>
+
+                </div>
+
+                <div class="therapist-info">
+
+                    <span class="therapist-specialty">
+                        {% for atendimento in terapeuta.tipos_atendimento %}
+                            {{ atendimento }}{% if not loop.last %} · {% endif %}
+                        {% else %}
+                            EQUIPE ANAVRIN
+                        {% endfor %}
+                    </span>
+
+                    <h3>
+                        {{ terapeuta.nome or "Terapeuta Anavrin" }}
+                    </h3>
+
+                    <span class="therapist-card-action">
+                        Conhecer perfil
+                    </span>
+
+                </div>
+
+            </article>
+
+        </a>
+
+    {% else %}
+
+        <p class="team-empty">
+            Nossa equipe está sendo atualizada.
+            Em breve você poderá conhecer nossas profissionais.
+        </p>
+
+    {% endfor %}
+
+</div>
+
+<!-- Botão para visualizar todos os terapeutas -->
+<div class="therapists-more">
+
+    <a href="{{ url_for('home.terapeutas_pro') }}" class="btn-all-therapists">
+        Conheça todos os terapeutas
+        <span aria-hidden="true">→</span>
+    </a>
+
+</div>
+
+

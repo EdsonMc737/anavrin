@@ -1,0 +1,185 @@
+
+<!-- PERFIL PRINCIPAL -->
+<section class="therapist-detail">
+
+    <div class="therapist-detail-image">
+
+        <img
+            src="{{ url_for('static', filename=terapeuta.foto_perfil or terapeuta.foto_apresentacao) }}"
+            alt="Foto de {{ terapeuta.nome }}"
+        >
+
+        <span class="therapist-detail-image-caption">
+            EQUIPE ANAVRIN
+        </span>
+
+    </div>
+
+    <div class="therapist-detail-content">
+
+        <a href="{{ url_for('home.terapeutas_pro') }}"
+           class="therapist-back-link">
+            ← Voltar para nossa equipe
+        </a>
+
+        <span class="therapist-detail-eyebrow">
+            CONHEÇA NOSSA PROFISSIONAL
+        </span>
+
+        <h1>
+            {{ terapeuta.nome }}
+        </h1>
+
+        <p class="therapist-detail-intro">
+            Cada experiência começa com um cuidado especial.
+            Conheça um pouco mais sobre nossa profissional
+            e descubra como ela pode fazer parte do seu
+            momento Anavrin.
+        </p>
+
+        <div class="therapist-detail-divider"></div>
+
+        <!-- INFORMAÇÕES PESSOAIS -->
+        <div class="therapist-personal-info">
+
+            {% if terapeuta.unidade %}
+            <div class="therapist-info-item">
+                <span>UNIDADE</span>
+                <strong>{{ terapeuta.unidade }}</strong>
+            </div>
+            {% endif %}
+
+            {% if terapeuta.signo %}
+            <div class="therapist-info-item">
+                <span>SIGNO</span>
+                <strong>{{ terapeuta.signo }}</strong>
+            </div>
+            {% endif %}
+
+            {% if terapeuta.idade %}
+            <div class="therapist-info-item">
+                <span>IDADE</span>
+                <strong>{{ terapeuta.idade }} anos</strong>
+            </div>
+            {% endif %}
+
+            {% if terapeuta.experiencia %}
+            <div class="therapist-info-item">
+                <span>EXPERIÊNCIA</span>
+                <strong>{{ terapeuta.experiencia }}</strong>
+            </div>
+            {% endif %}
+
+        </div>
+
+        <!-- STATUS DA EQUIPE -->
+        {% if terapeuta.status_equipe == "NOVA" %}
+
+            <span class="therapist-detail-status">
+                Nova integrante Anavrin
+            </span>
+
+        {% elif terapeuta.status_equipe == "RET" %}
+
+            <span class="therapist-detail-status">
+                De volta à Anavrin
+            </span>
+
+        {% elif terapeuta.status_equipe == "VET" %}
+
+            <span class="therapist-detail-status">
+                Veterana Anavrin
+            </span>
+
+        {% endif %}
+
+        <!-- BOTÃO DE AGENDAMENTO -->
+        <a href="{{ url_for('home.home_index') }}#agendamento"
+           class="therapist-detail-button">
+
+            Agende sua experiência
+            <span></span>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ESPECIALIDADES E ATENDIMENTOS -->
+<section class="therapist-specialties-section">
+
+    <div class="therapist-specialties-header">
+
+        <span class="therapist-detail-eyebrow">
+            CUIDADO E BEM-ESTAR
+        </span>
+
+        <h2>
+            Especialidades
+            <span>e atendimentos</span>
+        </h2>
+
+        <p>
+            Conheça as experiências que nossa profissional
+            está preparada para proporcionar.
+        </p>
+
+    </div>
+
+    <div class="therapist-specialties-list">
+
+        <!-- CATEGORIAS VINCULADAS À TERAPEUTA -->
+        {% set atendimentos = terapeuta.tipos_atendimento or [] %}
+
+        {% if atendimentos %}
+
+            {% for atendimento in atendimentos %}
+
+                <div class="therapist-specialty-item">
+
+                    <span>✧</span>
+
+                    <strong>
+                        {{ atendimento }}
+                    </strong>
+
+                </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <p class="therapist-specialties-empty">
+                As informações sobre os atendimentos
+                desta profissional serão atualizadas em breve.
+            </p>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+
+<!-- MENSAGEM FINAL -->
+<section class="therapist-detail-quote">
+
+    <span>ESSÊNCIA ANAVRIN</span>
+
+    <h2>
+        Seu momento de cuidado
+        <em>começa aqui.</em>
+    </h2>
+
+    <p>
+        Permita-se desacelerar, respirar e viver
+        uma experiência pensada para você.
+    </p>
+
+    <a href="{{ url_for('home.home_index') }}#agendamento">
+        Viva sua experiência Anavrin
+    </a>
+
+</section>

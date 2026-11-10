@@ -1,0 +1,44 @@
+@import url('pages/reset.css');
+@import url('pages/index.css');
+@import url('pages/massagens.css');
+
+
+@import url('include/navmenu.css');
+@import url('include/banner.css');
+@import url('include/text_banner.css');
+@import url('include/terapeutas.css');
+@import url('include/servicos.css');
+@import url('include/rodape.css');
+@import url('include/depo.css');
+@import url('include/contato_index.css');
+@import url('include/cards_terapeutas.css');
+@import url('include/comp_perfil.css');
+@import url('include/comp_perfil_ensaio.css');
+@import url('include/comp_outras_terapeutas.css');
+@import url('include/comp_banner_perfil.css');
+@import url('include/banner_terapeutas.css');
+:root {
+    --primary-color: #1a1a1a;
+    --secondary-color: #c9a96e;
+    --background-color: #f5f5f5;
+    --font-primary: Arial, sans-serif;
+    --anavrin-green: #35483b;
+    --anavrin-green-dark: #26382d;
+    --anavrin-olive: #858c72;
+    --anavrin-sand: #eae7dc;
+    --anavrin-cream: #f7f6f1;
+    --anavrin-white: #ffffff;
+    --anavrin-text: #77796f;
+    --anavrin-border: #deded3;
+
+    --massage-bg: #f8f6f1;
+    --massage-bg-soft: #eee9df;
+    --massage-ink: #292820;
+    --massage-text: #625e54;
+    --massage-muted: #898274;
+    --massage-gold: #b49a68;
+    --massage-gold-light: #d9c294;
+    --massage-white: #fffefa;
+    --massage-line: rgba(180, 154, 104, .28);
+    --massage-shadow: 0 24px 65px rgba(38, 33, 24, .11);
+}

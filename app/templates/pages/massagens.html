@@ -1,0 +1,272 @@
+
+{% extends "base.html" %}
+
+{% block title %}Massagens e Experiências | Anavrin{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/massagens.css') }}">
+{% endblock %}
+
+{% block content %}
+
+{% include 'include/banner_massagem.html' %}
+
+
+
+<!-- INTRODUÇÃO -->
+<section class="massage-introduction">
+
+    <span class="massage-section-eyebrow">
+        MAIS DO QUE UM MOMENTO
+    </span>
+
+    <h2>
+        Um ritual de cuidado
+        <em>para os seus sentidos.</em>
+    </h2>
+
+    <p>
+        Na Anavrin, cada experiência é pensada para
+        proporcionar uma pausa na rotina e transformar
+        o cuidado em um momento especial.
+    </p>
+
+</section>
+
+
+<!-- EXPERIÊNCIAS -->
+<section class="massage-experiences" id="experiencias">
+
+    <div class="massage-experiences-header">
+
+        <div>
+            <span class="massage-section-eyebrow">
+                NOSSO MENU DE EXPERIÊNCIAS
+            </span>
+
+            <h2>
+                Escolha seu
+                <em>momento.</em>
+            </h2>
+        </div>
+
+        <p>
+            Descubra uma experiência que combina
+            com o que você deseja sentir.
+        </p>
+
+    </div>
+
+
+    <div class="massage-experiences-grid">
+
+        <!-- FOUR HANDS -->
+        <article class="massage-card">
+
+            <div class="massage-card-image">
+
+                <img
+                    src="{{ url_for('static', filename='img/massagens/four-hands.webp') }}"
+                    alt="Experiência Four Hands Anavrin"
+                    loading="lazy"
+                >
+
+                <span class="massage-card-number">01</span>
+
+            </div>
+
+            <div class="massage-card-content">
+
+                <span class="massage-card-category">
+                    EXPERIÊNCIA SENSORIAL
+                </span>
+
+                <h3>Four Hands</h3>
+
+                <p>
+                    Uma experiência conduzida por duas
+                    terapeutas em movimentos coordenados,
+                    criando uma sensação singular de
+                    cuidado e relaxamento.
+                </p>
+
+                <a href="{{ url_for('home.home_index') }}?atendimento=Four%20Hands#agendamento"
+                   class="massage-card-button">
+                    AGENDAR EXPERIÊNCIA
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- MASSAGEM RELAXANTE -->
+        <article class="massage-card">
+
+            <div class="massage-card-image">
+
+                <img
+                    src="{{ url_for('static', filename='img/massagens/massagem-relaxante.webp') }}"
+                    alt="Massagem Relaxante Anavrin"
+                    loading="lazy"
+                >
+
+                <span class="massage-card-number">02</span>
+
+            </div>
+
+            <div class="massage-card-content">
+
+                <span class="massage-card-category">
+                    PAUSA E TRANQUILIDADE
+                </span>
+
+                <h3>Massagem Relaxante</h3>
+
+                <p>
+                    Movimentos suaves e acolhedores
+                    que convidam o corpo a desacelerar
+                    e proporcionam um momento de
+                    tranquilidade.
+                </p>
+
+                <a href="{{ url_for('home.home_index') }}?atendimento=Massagem%20Relaxante#agendamento"
+                   class="massage-card-button">
+                    AGENDAR EXPERIÊNCIA
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- JACUZZI E OFURÔ -->
+        <article class="massage-card">
+
+            <div class="massage-card-image">
+
+                <img
+                    src="{{ url_for('static', filename='img/massagens/jacuzzi-ofuro.webp') }}"
+                    alt="Jacuzzi e Ofurô Anavrin"
+                    loading="lazy"
+                >
+
+                <span class="massage-card-number">03</span>
+
+            </div>
+
+            <div class="massage-card-content">
+
+                <span class="massage-card-category">
+                    RITUAL PREMIUM
+                </span>
+
+                <h3>Jacuzzi &amp; Ofurô</h3>
+
+                <p>
+                    Uma experiência premium que combina
+                    o prazer da água e um ambiente
+                    preparado para proporcionar
+                    relaxamento e bem-estar.
+                </p>
+
+                <a href="{{ url_for('home.home_index') }}?atendimento=Jacuzzi%20%26%20Ofur%C3%B4%20%E2%80%94%20Sess%C3%A3o%20Premium#agendamento"
+                   class="massage-card-button">
+                    AGENDAR EXPERIÊNCIA
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- MASSAGEM PERSONALIZADA -->
+        <article class="massage-card">
+
+            <div class="massage-card-image">
+
+                <img
+                    src="{{ url_for('static', filename='img/banner/fourhands.png') }}"
+                    alt="Massagem Personalizada Anavrin"
+                    loading="lazy"
+                >
+
+                <span class="massage-card-number">04</span>
+
+            </div>
+
+            <div class="massage-card-content">
+
+                <span class="massage-card-category">
+                    CUIDADO INDIVIDUAL
+                </span>
+
+                <h3>Massagem Personalizada</h3>
+
+                <p>
+                    Uma experiência pensada de acordo
+                    com suas preferências, respeitando
+                    seu momento e suas necessidades
+                    de relaxamento.
+                </p>
+
+                <a href="{{ url_for('home.home_index') }}?atendimento=Massagem%20Personalizada#agendamento"
+                   class="massage-card-button">
+                    AGENDAR EXPERIÊNCIA
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- SESSÃO CASAL -->
+        <article class="massage-card massage-card-wide">
+
+            <div class="massage-card-image">
+
+                <img
+                    src="{{ url_for('static', filename='img/massagens/sessao-casal.webp') }}"
+                    alt="Sessão Casal Anavrin"
+                    loading="lazy"
+                >
+
+                <span class="massage-card-number">05</span>
+
+            </div>
+
+            <div class="massage-card-content">
+
+                <span class="massage-card-category">
+                    UMA EXPERIÊNCIA A DOIS
+                </span>
+
+                <h3>Sessão Casal</h3>
+
+                <p>
+                    Compartilhe um momento especial
+                    de cuidado e tranquilidade.
+                    Uma experiência pensada para
+                    duas pessoas aproveitarem juntas.
+                </p>
+
+                <a href="{{ url_for('home.home_index') }}?atendimento=Sess%C3%A3o%20Casal#agendamento"
+                   class="massage-card-button">
+                    AGENDAR EXPERIÊNCIA
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+{% include 'include/banner_rodape.html' %}
+
+{% endblock %}

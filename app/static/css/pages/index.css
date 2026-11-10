@@ -1,0 +1,164 @@
+
+/* =====================================
+   LAYOUT PRINCIPAL - ANAVRIN
+===================================== */
+
+/* RESET E CONFIGURAÇÕES GERAIS */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    max-width: 100%;
+    scroll-behavior: smooth;
+    overflow-x: clip;
+}
+
+body {
+    width: 100%;
+    min-width: 320px;
+    margin: 0;
+    overflow-x: clip;
+    background: var(--background-color, #f5f5f5);
+}
+
+img,
+video,
+iframe {
+    max-width: 100%;
+}
+
+img {
+    display: block;
+    height: auto;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* CONTEÚDO PRINCIPAL */
+
+main {
+    width: 100%;
+    min-width: 0;
+    overflow: clip;
+}
+
+main > section {
+    width: 100%;
+    min-width: 0;
+}
+
+/* CONTAINERS */
+
+.container,
+.services-container,
+.about-container,
+.therapists-container {
+    width: 100%;
+    max-width: 1400px;
+    margin-inline: auto;
+}
+
+/* PROTEÇÃO CONTRA ELEMENTOS ESTOURADOS */
+
+section,
+div,
+article {
+    min-width: 0;
+}
+
+h1,
+h2,
+h3,
+p {
+    overflow-wrap: break-word;
+}
+
+/* =====================================
+   NOTEBOOKS
+===================================== */
+
+@media (max-width: 1200px) {
+
+    main > section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+}
+
+/* =====================================
+   TABLETS
+===================================== */
+
+@media (max-width: 850px) {
+
+    main > section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    main {
+        overflow-x: clip;
+    }
+
+}
+
+/* =====================================
+   CELULARES
+===================================== */
+
+@media (max-width: 650px) {
+
+    main > section {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    h1 {
+        font-size: clamp(30px, 8vw, 42px);
+    }
+
+    h2 {
+        font-size: clamp(27px, 7vw, 36px);
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+}
+
+/* =====================================
+   CELULARES PEQUENOS
+===================================== */
+
+@media (max-width: 380px) {
+
+    main > section {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 27px;
+    }
+
+}

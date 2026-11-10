@@ -1,0 +1,485 @@
+
+/* ==================================================
+   SEÇÃO TERAPEUTAS - ANAVRIN
+================================================== */
+
+.therapists-section {
+    width: 100%;
+    padding: clamp(70px, 8vw, 110px) 6% clamp(80px, 9vw, 120px);
+    background: #f5f3ee;
+    box-sizing: border-box;
+}
+
+/* ==================================================
+   CABEÇALHO
+================================================== */
+
+.therapists-header {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto clamp(40px, 5vw, 65px);
+    text-align: center;
+}
+
+.therapists-label {
+    display: block;
+    margin-bottom: 22px;
+    color: #ad9362;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.therapists-header h2 {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: clamp(32px, 4vw, 55px);
+    font-weight: 400;
+    line-height: 1.2;
+    color: #292720;
+}
+
+.therapists-header h2 span {
+    display: block;
+    color: #b49a68;
+    font-style: italic;
+}
+
+.therapists-header p {
+    max-width: 550px;
+    margin: 22px auto 0;
+    color: #77736a;
+    font-size: clamp(13px, 1.2vw, 14px);
+    line-height: 1.9;
+}
+
+/* ==================================================
+   GRID DOS CARDS
+================================================== */
+
+.therapists-grid {
+    width: 100%;
+    max-width: 1450px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: clamp(12px, 1.6vw, 22px);
+}
+
+/* ==================================================
+   LINK - CARD INTEIRO CLICÁVEL
+================================================== */
+
+.therapist-card-link {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+.therapist-card-link:focus-visible {
+    outline: 2px solid #858c72;
+    outline-offset: 5px;
+}
+
+/* ==================================================
+   CARD
+================================================== */
+
+.therapist-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+
+    background: #fff;
+    overflow: hidden;
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+}
+
+.therapist-card-link:hover .therapist-card {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 35px rgba(40, 35, 25, .12);
+}
+
+/* ==================================================
+   IMAGEM
+================================================== */
+
+.therapist-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background: #e7e1d7;
+}
+
+.therapist-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform .8s cubic-bezier(.2, .7, .2, 1);
+}
+
+.therapist-card-link:hover .therapist-image img {
+    transform: scale(1.06);
+}
+
+/* ==================================================
+   NÚMERO DO CARD
+================================================== */
+
+.therapist-number {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 2;
+
+    color: #fff;
+    font-family: Georgia, serif;
+    font-size: 17px;
+
+    text-shadow: 0 1px 5px rgba(0, 0, 0, .4);
+}
+
+/* ==================================================
+   INFORMAÇÕES
+================================================== */
+
+.therapist-info {
+    padding: clamp(15px, 1.8vw, 25px) clamp(12px, 1.3vw, 18px) 25px;
+}
+
+.therapist-specialty {
+    display: block;
+    margin-bottom: 12px;
+
+    color: #ad9362;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    line-height: 1.6;
+}
+
+.therapist-info h3 {
+    margin: 0;
+
+    color: #292720;
+    font-family: Georgia, serif;
+    font-size: clamp(16px, 1.5vw, 21px);
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+/* ==================================================
+   INDICAÇÃO DE ACESSO AO PERFIL
+================================================== */
+
+.therapist-card-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 17px;
+
+    color: #8f774d;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    transition:
+        color .3s ease,
+        gap .3s ease;
+}
+
+.therapist-card-action span {
+    font-size: 17px;
+    transition: transform .3s ease;
+}
+
+.therapist-card-link:hover .therapist-card-action {
+    color: #35483b;
+    gap: 16px;
+}
+
+.therapist-card-link:hover .therapist-card-action span {
+    transform: translate(3px, -3px);
+}
+
+/* ==================================================
+   BOTÃO - CONHEÇA NOSSA EQUIPE
+================================================== */
+
+.therapists-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 55px;
+}
+
+.therapist-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+
+    padding: 17px 32px;
+
+    background: #35483b;
+    color: #fff;
+
+    text-decoration: none;
+    border: 1px solid #35483b;
+    border-radius: 3px;
+
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    transition: all .35s ease;
+}
+
+.therapist-button-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+    font-weight: 300;
+
+    transition: transform .35s ease;
+}
+
+.therapist-button:hover {
+    background: transparent;
+    color: #35483b;
+    transform: translateY(-3px);
+}
+
+.therapist-button:hover .therapist-button-icon {
+    transform: translate(4px, -4px);
+}
+
+/* ==================================================
+   NOTEBOOKS
+================================================== */
+
+@media (max-width: 1200px) {
+    .therapists-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        max-width: 950px;
+        gap: 20px;
+    }
+}
+
+/* ==================================================
+   TABLETS
+================================================== */
+
+@media (max-width: 850px) {
+    .therapists-section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .therapists-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-width: 650px;
+        gap: 18px;
+    }
+
+    .therapist-info {
+        padding: 20px 15px 24px;
+    }
+
+    .therapist-info h3 {
+        font-size: 19px;
+    }
+}
+
+/* ==================================================
+   CELULARES
+================================================== */
+
+@media (max-width: 650px) {
+    .therapists-section {
+        padding: 70px 5%;
+    }
+
+    .therapists-header {
+        margin-bottom: 40px;
+    }
+
+    .therapists-label {
+        margin-bottom: 16px;
+        font-size: 9px;
+    }
+
+    .therapists-header h2 {
+        font-size: clamp(30px, 7vw, 38px);
+    }
+
+    .therapists-header p {
+        margin-top: 16px;
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .therapists-grid {
+        gap: 14px;
+    }
+
+    .therapist-info {
+        padding: 17px 12px 20px;
+    }
+
+    .therapist-specialty {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .therapist-info h3 {
+        font-size: 17px;
+    }
+
+    .therapist-card-action {
+        gap: 7px;
+        margin-top: 13px;
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .therapists-footer {
+        margin-top: 40px;
+    }
+
+    .therapist-button {
+        gap: 15px;
+        padding: 15px 20px;
+        font-size: 10px;
+    }
+}
+
+/* ==================================================
+   CELULARES PEQUENOS
+================================================== */
+
+@media (max-width: 400px) {
+    .therapists-section {
+        padding: 60px 6%;
+    }
+
+    .therapists-grid {
+        grid-template-columns: 1fr;
+        max-width: 320px;
+        gap: 22px;
+    }
+
+    .therapist-image {
+        aspect-ratio: 4 / 5;
+    }
+
+    .therapist-info {
+        padding: 22px 18px 25px;
+    }
+
+    .therapist-info h3 {
+        font-size: 20px;
+    }
+
+    .therapist-specialty {
+        font-size: 9px;
+    }
+}
+
+/* ==================================================
+   DISPOSITIVOS SEM HOVER
+================================================== */
+
+@media (hover: none) {
+    .therapist-card-link:hover .therapist-card {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .therapist-card-link:hover .therapist-image img {
+        transform: none;
+    }
+}
+
+/* ==================================================
+   ACESSIBILIDADE
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .therapist-card,
+    .therapist-image img,
+    .therapist-card-action,
+    .therapist-button,
+    .therapist-button-icon {
+        transition: none;
+    }
+}
+
+.therapists-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 45px;
+    width: 100%;
+}
+
+.btn-all-therapists {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 15px 32px;
+    background: #365c50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-all-therapists:hover {
+    background: #27473d;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-all-therapists span {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.btn-all-therapists:hover span {
+    transform: translateX(5px);
+}
+
+@media (max-width: 600px) {
+    .therapists-more {
+        margin-top: 30px;
+    }
+
+    .btn-all-therapists {
+        width: 90%;
+        padding: 14px 20px;
+        font-size: 14px;
+    }
+}
+

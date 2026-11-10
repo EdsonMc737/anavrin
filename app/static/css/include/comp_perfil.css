@@ -1,0 +1,332 @@
+
+/* =====================================
+   PERFIL INDIVIDUAL DA TERAPEUTA
+===================================== */
+
+.therapist-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 80px;
+    padding: 100px 9%;
+    background: #f5f3ed;
+}
+
+.therapist-detail-image {
+    position: relative;
+    width: 100%;
+    height: 650px;
+    overflow: hidden;
+    background: #e5e2d8;
+}
+
+.therapist-detail-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+.therapist-detail-image-caption {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    color: #fff;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.therapist-detail-content {
+    max-width: 550px;
+}
+
+.therapist-back-link {
+    display: inline-block;
+    margin-bottom: 65px;
+    color: #68735f;
+    font-size: 12px;
+    text-decoration: none;
+    transition: color .3s ease;
+}
+
+.therapist-back-link:hover {
+    color: #35483b;
+}
+
+.therapist-detail-eyebrow {
+    display: block;
+    margin-bottom: 22px;
+    color: #879078;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.therapist-detail-content h1 {
+    margin: 0 0 25px;
+    color: #35483b;
+    font-family: Georgia, serif;
+    font-size: clamp(38px, 4vw, 58px);
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+.therapist-detail-intro {
+    max-width: 470px;
+    color: #77786e;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.therapist-detail-divider {
+    width: 100%;
+    height: 1px;
+    margin: 35px 0;
+    background: #deded3;
+}
+
+.therapist-personal-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.therapist-info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.therapist-info-item span {
+    color: #929486;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.therapist-info-item strong {
+    color: #35483b;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.therapist-detail-status {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 9px 16px;
+    border: 1px solid #d7d9ce;
+    border-radius: 30px;
+    color: #78816c;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.therapist-detail-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    max-width: 340px;
+    margin-top: 40px;
+    padding: 20px 25px;
+    background: #35483b;
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: .3s ease;
+}
+
+.therapist-detail-button:hover {
+    background: #26382d;
+    transform: translateY(-4px);
+}
+
+.therapist-detail-button span {
+    font-size: 20px;
+}
+
+
+/* =====================================
+   ESPECIALIDADES
+===================================== */
+
+.therapist-specialties-section {
+    padding: 100px 9%;
+    background: #fff;
+    text-align: center;
+}
+
+.therapist-specialties-header {
+    max-width: 650px;
+    margin: 0 auto 50px;
+}
+
+.therapist-specialties-header h2 {
+    color: #35483b;
+    font-family: Georgia, serif;
+    font-size: clamp(34px, 4vw, 46px);
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.therapist-specialties-header h2 span {
+    display: block;
+    color: #92977f;
+    font-style: italic;
+}
+
+.therapist-specialties-header p {
+    color: #858579;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.therapist-specialties-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.therapist-specialty-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 17px 25px;
+    border: 1px solid #e5e5dc;
+    color: #56634f;
+    font-size: 12px;
+    letter-spacing: .5px;
+}
+
+.therapist-specialty-item span {
+    color: #9b9e82;
+    font-size: 19px;
+}
+
+
+/* =====================================
+   MENSAGEM FINAL
+===================================== */
+
+.therapist-detail-quote {
+    padding: 100px 20px;
+    background: #35483b;
+    text-align: center;
+}
+
+.therapist-detail-quote > span {
+    color: #c6cbb9;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.therapist-detail-quote h2 {
+    margin: 25px 0;
+    color: #fff;
+    font-family: Georgia, serif;
+    font-size: clamp(34px, 4vw, 48px);
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.therapist-detail-quote h2 em {
+    display: block;
+    color: #d1d4c5;
+    font-weight: 400;
+}
+
+.therapist-detail-quote p {
+    color: #e0e2d8;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.therapist-detail-quote a {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 17px 28px;
+    border: 1px solid #d1d4c5;
+    color: #fff;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: .3s ease;
+}
+
+.therapist-detail-quote a:hover {
+    background: #f1eee5;
+    color: #35483b;
+}
+
+
+/* =====================================
+   RESPONSIVIDADE
+===================================== */
+
+@media (max-width: 900px) {
+
+    .therapist-detail {
+        grid-template-columns: 1fr;
+        gap: 45px;
+        padding: 70px 7%;
+    }
+
+    .therapist-detail-image {
+        height: 550px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .therapist-detail-content {
+        max-width: 650px;
+        margin: 0 auto;
+    }
+
+    .therapist-back-link {
+        margin-bottom: 35px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .therapist-detail {
+        padding: 45px 22px 65px;
+        gap: 35px;
+    }
+
+    .therapist-detail-image {
+        height: 430px;
+    }
+
+    .therapist-detail-content h1 {
+        font-size: 38px;
+    }
+
+    .therapist-personal-info {
+        gap: 25px 15px;
+    }
+
+    .therapist-detail-button {
+        max-width: none;
+    }
+
+    .therapist-specialties-section {
+        padding: 75px 22px;
+    }
+
+    .therapist-specialties-list {
+        flex-direction: column;
+    }
+
+    .therapist-specialty-item {
+        justify-content: center;
+    }
+
+    .therapist-detail-quote {
+        padding: 75px 22px;
+    }
+
+}

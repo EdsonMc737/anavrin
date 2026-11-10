@@ -1,0 +1,768 @@
+
+/* ==========================================================
+   ANAVRIN — PERFIL INDIVIDUAL
+   ESTILO: EDITORIAL DE LUXO
+========================================================== */
+
+.therapist-detail,
+.therapist-editorial,
+.therapist-specialties-section,
+.therapist-detail-quote {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.therapist-detail {
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    min-height: 760px;
+    background: #f7f5f0;
+    overflow: hidden;
+}
+
+/* ==========================================================
+   IMAGEM PRINCIPAL
+========================================================== */
+
+.therapist-detail-image {
+    position: relative;
+    min-height: 760px;
+    overflow: hidden;
+    background: #eae5da;
+}
+
+.therapist-detail-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 760px;
+    object-fit: cover;
+    object-position: center 25%;
+}
+
+.therapist-detail-image::after {
+    content: "";
+    position: absolute;
+    inset: 55% 0 0;
+    background: linear-gradient(
+        to top,
+        rgba(24, 29, 23, .35),
+        transparent
+    );
+    pointer-events: none;
+}
+
+.therapist-detail-image-caption {
+    position: absolute;
+    z-index: 2;
+    bottom: 35px;
+    left: 40px;
+    color: #fff;
+    font-size: 9px;
+    letter-spacing: 4px;
+}
+
+/* ==========================================================
+   CONTEÚDO DO PERFIL
+========================================================== */
+
+.therapist-detail-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: clamp(45px, 7vw, 110px);
+}
+
+.therapist-back-link {
+    margin-bottom: clamp(55px, 8vw, 100px);
+    color: #77736a;
+    font-size: 11px;
+    letter-spacing: .5px;
+    text-decoration: none;
+    transition: color .3s ease;
+}
+
+.therapist-back-link:hover {
+    color: #ad9362;
+}
+
+.therapist-detail-eyebrow {
+    display: block;
+    margin-bottom: 25px;
+    color: #ad9362;
+    font-size: 9px;
+    letter-spacing: 3.5px;
+    line-height: 1.7;
+}
+
+.therapist-detail-content h1 {
+    max-width: 600px;
+    margin: 0;
+    color: #292720;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(42px, 5vw, 75px);
+    font-weight: 400;
+    line-height: 1.04;
+    letter-spacing: -2px;
+}
+
+.therapist-detail-intro {
+    max-width: 410px;
+    margin: 32px 0;
+    color: #77736a;
+    font-family: Georgia, serif;
+    font-size: 15px;
+    line-height: 2;
+    font-weight: 400;
+}
+
+.therapist-detail-divider {
+    width: 55px;
+    height: 1px;
+    margin: 5px 0 35px;
+    background: #ad9362;
+}
+
+/* ==========================================================
+   INFORMAÇÕES PESSOAIS
+========================================================== */
+
+.therapist-personal-info {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    max-width: 410px;
+    gap: 30px 35px;
+}
+
+.therapist-info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.therapist-info-item span {
+    color: #a18a61;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+.therapist-info-item strong {
+    color: #35372e;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.therapist-detail-status {
+    display: inline-block;
+    margin-top: 32px;
+    padding: 10px 0;
+    border-bottom: 1px solid #c5b48e;
+    color: #777c68;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* ==========================================================
+   BOTÃO
+========================================================== */
+
+.therapist-detail-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 40px;
+    padding: 17px 24px;
+    background: #35483b;
+    border: 1px solid #35483b;
+    color: #fff;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all .35s ease;
+}
+
+.therapist-detail-button span {
+    font-size: 18px;
+    transition: transform .35s ease;
+}
+
+.therapist-detail-button:hover {
+    background: transparent;
+    color: #35483b;
+}
+
+.therapist-detail-button:hover span {
+    transform: translate(4px, -4px);
+}
+
+/* ==========================================================
+   ENSAIO EDITORIAL
+========================================================== */
+
+.therapist-editorial {
+    padding: 125px 7%;
+    background: #fff;
+}
+
+.therapist-editorial-header {
+    max-width: 760px;
+    margin: 0 auto 85px;
+    text-align: center;
+}
+
+.therapist-editorial-header .therapist-detail-eyebrow {
+    margin-bottom: 25px;
+}
+
+.therapist-editorial-header h2,
+.therapist-specialties-header h2 {
+    margin: 0;
+    color: #292720;
+    font-family: Georgia, serif;
+    font-size: clamp(40px, 5vw, 65px);
+    font-weight: 400;
+    line-height: 1.12;
+    letter-spacing: -1.5px;
+}
+
+.therapist-editorial-header h2 span,
+.therapist-specialties-header h2 span {
+    display: block;
+    color: #ad9362;
+    font-style: italic;
+}
+
+.therapist-editorial-header p,
+.therapist-specialties-header p {
+    max-width: 490px;
+    margin: 25px auto 0;
+    color: #817d73;
+    font-size: 13px;
+    line-height: 2;
+}
+
+/* ==========================================================
+   GALERIA ASSIMÉTRICA
+========================================================== */
+
+.therapist-editorial-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-auto-rows: 65px;
+    grid-auto-flow: dense;
+    gap: 18px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.editorial-photo {
+    position: relative;
+    min-width: 0;
+    margin: 0;
+    overflow: hidden;
+    background: #eae5da;
+}
+
+/* Distribuição editorial das fotografias */
+
+.editorial-photo:nth-child(6n + 1) {
+    grid-column: span 5;
+    grid-row: span 8;
+}
+
+.editorial-photo:nth-child(6n + 2) {
+    grid-column: span 3;
+    grid-row: span 5;
+}
+
+.editorial-photo:nth-child(6n + 3) {
+    grid-column: span 4;
+    grid-row: span 7;
+}
+
+.editorial-photo:nth-child(6n + 4) {
+    grid-column: span 4;
+    grid-row: span 6;
+}
+
+.editorial-photo:nth-child(6n + 5) {
+    grid-column: span 3;
+    grid-row: span 7;
+}
+
+.editorial-photo:nth-child(6n + 6) {
+    grid-column: span 5;
+    grid-row: span 6;
+}
+
+.editorial-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform .8s cubic-bezier(.2, .7, .2, 1);
+}
+
+.editorial-photo:hover img {
+    transform: scale(1.045);
+}
+
+.editorial-photo figcaption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 35px 20px 18px;
+    background: linear-gradient(
+        transparent,
+        rgba(25, 30, 23, .65)
+    );
+    color: #fff;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    opacity: 0;
+    transition: opacity .4s ease;
+}
+
+.editorial-photo:hover figcaption {
+    opacity: 1;
+}
+
+/* Galeria vazia */
+
+.therapist-editorial-empty {
+    max-width: 650px;
+    margin: auto;
+    padding: 55px 20px;
+    border-top: 1px solid #e5e0d6;
+    border-bottom: 1px solid #e5e0d6;
+    text-align: center;
+}
+
+.therapist-editorial-empty p {
+    color: #77736a;
+    font-family: Georgia, serif;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* ==========================================================
+   ESPECIALIDADES
+========================================================== */
+
+.therapist-specialties-section {
+    padding: 125px 8%;
+    background: #f7f5f0;
+}
+
+.therapist-specialties-header {
+    max-width: 760px;
+    margin: 0 auto 70px;
+    text-align: center;
+}
+
+.therapist-specialties-header h2 {
+    font-size: clamp(40px, 5vw, 60px);
+}
+
+.therapist-specialties-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 1100px;
+    margin: 0 auto;
+    border-top: 1px solid #dcd6c9;
+}
+
+.therapist-specialty-item {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    min-height: 85px;
+    padding: 15px 20px;
+    border-bottom: 1px solid #dcd6c9;
+    color: #44483e;
+    font-family: Georgia, serif;
+    font-size: 15px;
+    transition: color .3s ease;
+}
+
+.therapist-specialty-item span {
+    color: #ad9362;
+    font-size: 22px;
+}
+
+.therapist-specialty-item:hover {
+    color: #ad9362;
+}
+
+.therapist-specialties-list > p {
+    grid-column: 1 / -1;
+    padding: 25px;
+    color: #77736a;
+    text-align: center;
+    line-height: 1.8;
+}
+
+/* ==========================================================
+   ENCERRAMENTO
+========================================================== */
+
+.therapist-detail-quote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 140px 7%;
+    background: #35483b;
+    text-align: center;
+}
+
+.therapist-detail-quote > span {
+    margin-bottom: 30px;
+    color: #c6b184;
+    font-size: 9px;
+    letter-spacing: 4px;
+}
+
+.therapist-detail-quote h2 {
+    max-width: 850px;
+    margin: 0;
+    color: #f7f5f0;
+    font-family: Georgia, serif;
+    font-size: clamp(43px, 6vw, 76px);
+    font-weight: 400;
+    line-height: 1.12;
+}
+
+.therapist-detail-quote h2 em {
+    display: block;
+    color: #c6b184;
+    font-weight: 400;
+}
+
+.therapist-detail-quote p {
+    max-width: 470px;
+    margin: 30px auto 40px;
+    color: rgba(255, 255, 255, .7);
+    font-size: 13px;
+    line-height: 2;
+}
+
+.therapist-detail-quote a {
+    display: inline-block;
+    padding: 17px 30px;
+    border: 1px solid #c6b184;
+    color: #f7f5f0;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all .35s ease;
+}
+
+.therapist-detail-quote a:hover {
+    background: #c6b184;
+    color: #35483b;
+}
+
+/* ==========================================================
+   TABLETS
+========================================================== */
+
+@media (max-width: 1000px) {
+
+    .therapist-detail {
+        grid-template-columns: 1fr 1fr;
+        min-height: 650px;
+    }
+
+    .therapist-detail-image,
+    .therapist-detail-image img {
+        min-height: 650px;
+    }
+
+    .therapist-detail-content {
+        padding: 40px;
+    }
+
+    .therapist-detail-content h1 {
+        font-size: clamp(38px, 5vw, 55px);
+    }
+
+    .therapist-editorial-grid {
+        grid-auto-rows: 55px;
+        gap: 13px;
+    }
+
+    .therapist-specialties-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* ==========================================================
+   CELULARES
+========================================================== */
+
+@media (max-width: 700px) {
+
+    .therapist-detail {
+        grid-template-columns: 1fr;
+    }
+
+    .therapist-detail-image,
+    .therapist-detail-image img {
+        min-height: 0;
+        height: auto;
+        aspect-ratio: 4 / 5;
+    }
+
+    .therapist-detail-content {
+        padding: 45px 7% 70px;
+    }
+
+    .therapist-back-link {
+        margin-bottom: 45px;
+    }
+
+    .therapist-detail-content h1 {
+        font-size: 46px;
+    }
+
+    .therapist-detail-intro {
+        font-size: 14px;
+    }
+
+    .therapist-personal-info {
+        gap: 25px 15px;
+    }
+
+    .therapist-detail-button {
+        width: 100%;
+        justify-content: space-between;
+        box-sizing: border-box;
+    }
+
+    .therapist-editorial {
+        padding: 85px 5%;
+    }
+
+    .therapist-editorial-header {
+        margin-bottom: 45px;
+    }
+
+    .therapist-editorial-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: auto;
+        gap: 10px;
+    }
+
+    .editorial-photo,
+    .editorial-photo:nth-child(n) {
+        grid-column: span 1;
+        grid-row: auto;
+        aspect-ratio: 3 / 4;
+    }
+
+    .editorial-photo:nth-child(4n + 1) {
+        grid-column: span 2;
+        aspect-ratio: 5 / 4;
+    }
+
+    .editorial-photo figcaption {
+        padding: 25px 12px 12px;
+        font-size: 8px;
+        opacity: 1;
+    }
+
+    .therapist-specialties-section {
+        padding: 85px 7%;
+    }
+
+    .therapist-specialties-header {
+        margin-bottom: 40px;
+    }
+
+    .therapist-specialties-list {
+        grid-template-columns: 1fr;
+    }
+
+    .therapist-specialty-item {
+        min-height: 70px;
+        padding: 12px 5px;
+    }
+
+    .therapist-detail-quote {
+        padding: 100px 7%;
+    }
+
+    .therapist-detail-quote h2 {
+        font-size: 44px;
+    }
+}
+
+/* ==========================================================
+   CELULARES PEQUENOS
+========================================================== */
+
+@media (max-width: 380px) {
+
+    .therapist-detail-content h1 {
+        font-size: 38px;
+    }
+
+    .therapist-personal-info {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .therapist-editorial-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .editorial-photo:nth-child(n) {
+        grid-column: span 1;
+        aspect-ratio: 4 / 5;
+    }
+
+    .therapist-detail-quote h2 {
+        font-size: 37px;
+    }
+}
+
+/* ==========================================================
+   ACESSIBILIDADE
+========================================================== */
+
+@media (hover: none) {
+
+    .editorial-photo figcaption {
+        opacity: 1;
+    }
+
+    .editorial-photo:hover img {
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .therapist-detail-button,
+    .therapist-detail-button span,
+    .therapist-back-link,
+    .editorial-photo img,
+    .editorial-photo figcaption,
+    .therapist-specialty-item,
+    .therapist-detail-quote a {
+        transition: none;
+    }
+}
+
+
+
+/* LIGHTBOX ANAVRIN */
+
+.anavrin-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: rgba(15, 15, 15, 0.96);
+    align-items: center;
+    justify-content: center;
+    padding: 40px 70px;
+}
+
+.anavrin-lightbox.active {
+    display: flex;
+}
+
+.lightbox-content {
+    width: 100%;
+    max-width: 1000px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#lightboxImage {
+    max-width: 100%;
+    max-height: 78vh;
+    object-fit: contain;
+    display: block;
+}
+
+.lightbox-information {
+    color: #fff;
+    text-align: center;
+    margin-top: 18px;
+}
+
+#lightboxDescription {
+    margin: 0 0 8px;
+}
+
+#lightboxCounter {
+    font-size: 12px;
+    letter-spacing: 2px;
+    opacity: 0.7;
+}
+
+.lightbox-close,
+.lightbox-nav {
+    position: absolute;
+    border: none;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+}
+
+.lightbox-close {
+    top: 20px;
+    right: 30px;
+    font-size: 42px;
+}
+
+.lightbox-nav {
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    padding: 15px;
+}
+
+.lightbox-prev {
+    left: 20px;
+}
+
+.lightbox-next {
+    right: 20px;
+}
+
+@media (max-width: 600px) {
+    .anavrin-lightbox {
+        padding: 35px 45px;
+    }
+
+    .lightbox-nav {
+        font-size: 22px;
+    }
+
+    .lightbox-prev {
+        left: 2px;
+    }
+
+    .lightbox-next {
+        right: 2px;
+    }
+
+    .lightbox-close {
+        right: 15px;
+        top: 10px;
+    }
+}

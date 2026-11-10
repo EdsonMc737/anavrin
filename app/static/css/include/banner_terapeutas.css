@@ -1,0 +1,290 @@
+
+/* =========================================
+   BANNER TERAPEUTAS — ANAVRIN
+   Editorial Premium com imagem de fundo
+========================================= */
+
+.therapists-hero {
+    position: relative;
+    width: 100%;
+    min-height: 480px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #EAE4D8;
+    isolation: isolate;
+}
+
+/* =========================================
+   IMAGEM DE FUNDO
+========================================= */
+
+.therapists-hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+
+    background-image: url("/static/img/banner/MassagemRelaxante.png");
+    background-size: cover;
+    background-position: center 45%;
+    background-repeat: no-repeat;
+
+    transform: scale(1.02);
+}
+
+/* =========================================
+   SOBREPOSIÇÃO DA IMAGEM
+========================================= */
+
+.therapists-hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background: linear-gradient(
+        90deg,
+        rgba(35, 43, 32, 0.78) 0%,
+        rgba(35, 43, 32, 0.58) 50%,
+        rgba(35, 43, 32, 0.38) 100%
+    );
+}
+
+/* =========================================
+   CONTEÚDO
+========================================= */
+
+.therapists-hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 950px;
+
+    padding: 145px 25px 85px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+/* =========================================
+   IDENTIFICAÇÃO
+========================================= */
+
+.therapists-hero-eyebrow {
+    margin-bottom: 24px;
+
+    color: #D6C49D;
+
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+}
+
+/* =========================================
+   TÍTULO
+========================================= */
+
+.therapists-hero h1 {
+    margin: 0;
+
+    color: #FFFFFF;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(55px, 8vw, 100px);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -2px;
+}
+
+.therapists-hero h1 em {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #D6C49D;
+
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* =========================================
+   DETALHE DECORATIVO
+========================================= */
+
+.therapists-hero-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+    margin: 30px 0 22px;
+}
+
+.therapists-hero-divider span {
+    display: block;
+
+    width: 45px;
+    height: 1px;
+
+    background: #D6C49D;
+}
+
+.therapists-hero-divider i {
+    display: block;
+
+    width: 7px;
+    height: 7px;
+
+    border: 1px solid #D6C49D;
+    transform: rotate(45deg);
+}
+
+/* =========================================
+   DESCRIÇÃO
+========================================= */
+
+.therapists-hero-content p {
+    max-width: 570px;
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.92);
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(19px, 2vw, 23px);
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* =========================================
+   ASSINATURA
+========================================= */
+
+.therapists-hero-brand {
+    margin-top: 35px;
+
+    color: #D6C49D;
+
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 7px;
+}
+
+/* =========================================
+   ELEMENTO DECORATIVO
+========================================= */
+
+.therapists-hero-decoration {
+    position: absolute;
+
+    width: 380px;
+    height: 380px;
+
+    right: -190px;
+    bottom: -240px;
+
+    border: 1px solid rgba(214, 196, 157, 0.35);
+    border-radius: 50%;
+
+    pointer-events: none;
+    z-index: 2;
+}
+
+.therapists-hero-decoration::before {
+    content: "";
+
+    position: absolute;
+    inset: 25px;
+
+    border: 1px solid rgba(214, 196, 157, 0.25);
+    border-radius: 50%;
+}
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (max-width: 768px) {
+
+    .therapists-hero {
+        min-height: 430px;
+    }
+
+    .therapists-hero-background {
+        background-position: center;
+    }
+
+    .therapists-hero-overlay {
+        background: rgba(35, 43, 32, 0.62);
+    }
+
+    .therapists-hero-content {
+        padding: 125px 30px 70px;
+    }
+
+    .therapists-hero h1 {
+        font-size: clamp(52px, 10vw, 76px);
+    }
+
+    .therapists-hero-content p {
+        max-width: 500px;
+        font-size: 20px;
+    }
+}
+
+/* =========================================
+   CELULARES
+========================================= */
+
+@media (max-width: 480px) {
+
+    .therapists-hero {
+        min-height: 400px;
+    }
+
+    .therapists-hero-background {
+        background-position: center;
+    }
+
+    .therapists-hero-overlay {
+        background: rgba(35, 43, 32, 0.68);
+    }
+
+    .therapists-hero-content {
+        padding: 115px 24px 65px;
+    }
+
+    .therapists-hero-eyebrow {
+        font-size: 9px;
+        letter-spacing: 4px;
+        margin-bottom: 22px;
+    }
+
+    .therapists-hero h1 {
+        font-size: 55px;
+        line-height: 0.98;
+    }
+
+    .therapists-hero-divider {
+        margin: 25px 0 18px;
+    }
+
+    .therapists-hero-content p {
+        font-size: 18px;
+        line-height: 1.45;
+    }
+
+    .therapists-hero-brand {
+        margin-top: 28px;
+        font-size: 8px;
+    }
+}

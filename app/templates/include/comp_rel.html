@@ -1,0 +1,110 @@
+
+<!-- ==================================================
+     OUTRAS TERAPEUTAS
+================================================== -->
+
+{% if outras_terapeutas %}
+
+<section class="anavrin-other-therapists">
+
+    <div class="other-therapists-header">
+
+        <span>CONHEÇA NOSSA EQUIPE</span>
+
+        <h2>
+            Outras <em>terapeutas</em>
+        </h2>
+
+        <p>
+            Descubra outras profissionais e encontre
+            sua próxima experiência Anavrin.
+        </p>
+
+    </div>
+
+    <div class="other-therapists-window">
+
+        <div class="other-therapists-track">
+
+            <!-- PRIMEIRA SEQUÊNCIA -->
+            <div class="other-therapists-group">
+
+                {% for profissional in outras_terapeutas %}
+
+                <a
+                    href="{{ url_for('home.perfil_terapeuta', terapeuta_id=profissional.id) }}"
+                    class="other-therapist-card"
+                >
+
+                    <div class="other-therapist-photo">
+
+                        <img
+                            src="{{ url_for(
+                                'static',
+                                filename=profissional.foto_perfil or profissional.foto_apresentacao
+                            ) }}"
+                            alt="{{ profissional.nome }}"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <span class="other-therapist-name">
+                        {{ profissional.nome.split()[0] }}
+                    </span>
+
+                    <span class="other-therapist-role">
+                        TERAPEUTA
+                    </span>
+
+                </a>
+
+                {% endfor %}
+
+            </div>
+
+            <!-- SEGUNDA SEQUÊNCIA: PERMITE LOOP INFINITO -->
+            <div class="other-therapists-group" aria-hidden="true">
+
+                {% for profissional in outras_terapeutas %}
+
+                <a
+                    href="{{ url_for('home.perfil_terapeuta', terapeuta_id=profissional.id) }}"
+                    class="other-therapist-card"
+                    tabindex="-1"
+                >
+
+                    <div class="other-therapist-photo">
+
+                        <img
+                            src="{{ url_for(
+                                'static',
+                                filename=profissional.foto_perfil or profissional.foto_apresentacao
+                            ) }}"
+                            alt=""
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <span class="other-therapist-name">
+                        {{ profissional.nome.split()[0] }}
+                    </span>
+
+                    <span class="other-therapist-role">
+                        TERAPEUTA
+                    </span>
+
+                </a>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endif %}

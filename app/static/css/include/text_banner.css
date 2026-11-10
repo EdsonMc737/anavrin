@@ -1,0 +1,294 @@
+
+/* SOBRE A ANAVRIN */
+
+.about-section {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 100px 6%;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 60px;
+
+    background: #faf9f6;
+    box-sizing: border-box;
+}
+
+/* FOTO */
+
+.about-image {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    aspect-ratio: 5 / 6;
+    overflow: hidden;
+}
+
+.about-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.8s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.04);
+}
+
+/* CONTEÚDO */
+
+.about-content {
+    width: 100%;
+    min-width: 0;
+    max-width: 550px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* ETIQUETA */
+
+.about-label {
+    display: block;
+    color: #ad9362;
+    font-size: 10px;
+    letter-spacing: 3px;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+/* TÍTULO */
+
+.about-content h2 {
+    max-width: 100%;
+    margin: 0;
+
+    font-family: Georgia, serif;
+    font-size: clamp(30px, 3.8vw, 58px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -1px;
+
+    color: #292720;
+    overflow-wrap: break-word;
+}
+
+.about-content h2 span {
+    display: block;
+    color: #b49a68;
+    font-style: italic;
+}
+
+/* DETALHE DOURADO */
+
+.about-divider {
+    width: 55px;
+    height: 1px;
+    flex-shrink: 0;
+    background: #b49a68;
+    margin: 28px 0;
+}
+
+/* PARÁGRAFOS */
+
+.about-content p {
+    width: 100%;
+    margin: 0 0 20px;
+
+    color: #77736a;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.9;
+    overflow-wrap: break-word;
+}
+
+.about-content .about-highlight {
+    color: #514b40;
+    font-family: Georgia, serif;
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.8;
+    margin-top: 5px;
+}
+
+/* BOTÃO */
+
+.about-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    max-width: 100%;
+    margin-top: 20px;
+    padding: 16px 22px;
+    box-sizing: border-box;
+
+    border: 1px solid #b49a68;
+
+    color: #8f774d;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+
+    transition: all 0.3s ease;
+}
+
+.about-button span {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.about-button:hover {
+    background: #b49a68;
+    color: #fff;
+}
+
+.about-button:hover span {
+    transform: translateX(5px);
+}
+
+/* NOTEBOOKS */
+
+@media (max-width: 1100px) {
+    .about-section {
+        padding: 80px 5%;
+        gap: 35px;
+    }
+
+    .about-content h2 {
+        font-size: clamp(32px, 4vw, 45px);
+    }
+
+    .about-content p {
+        font-size: 14px;
+    }
+}
+
+/* TABLETS */
+
+@media (max-width: 850px) {
+    .about-section {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 35px;
+        padding: 70px 6%;
+    }
+
+    .about-image {
+        width: 100%;
+        max-width: 650px;
+        aspect-ratio: 16 / 10;
+        margin: 0 auto;
+    }
+
+    .about-content {
+        max-width: 650px;
+        margin: 0 auto;
+    }
+
+    .about-content h2 {
+        font-size: clamp(36px, 6vw, 48px);
+    }
+}
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+    .about-section {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 55px 20px;
+        gap: 28px;
+    }
+
+    .about-image {
+        width: 100%;
+        max-width: none;
+        aspect-ratio: 4 / 3;
+    }
+
+    .about-content {
+        width: 100%;
+        max-width: none;
+    }
+
+    .about-label {
+        font-size: 9px;
+        letter-spacing: 2px;
+        margin-bottom: 17px;
+    }
+
+    .about-content h2 {
+        font-size: clamp(30px, 8vw, 40px);
+        line-height: 1.2;
+    }
+
+    .about-divider {
+        margin: 20px 0;
+    }
+
+    .about-content p {
+        font-size: 14px;
+        line-height: 1.8;
+        margin-bottom: 15px;
+    }
+
+    .about-content .about-highlight {
+        font-size: 15px;
+    }
+
+    .about-button {
+        margin-top: 15px;
+        padding: 15px 18px;
+        font-size: 9px;
+    }
+}
+
+/* CELULARES PEQUENOS */
+
+@media (max-width: 380px) {
+    .about-section {
+        padding: 45px 16px;
+        gap: 24px;
+    }
+
+    .about-image {
+        aspect-ratio: 1 / 1;
+    }
+
+    .about-content h2 {
+        font-size: 29px;
+    }
+
+    .about-content p {
+        font-size: 13px;
+    }
+
+    .about-button {
+        width: 100%;
+        gap: 12px;
+        padding: 14px 10px;
+        font-size: 8px;
+    }
+}
+
+/* EVITA PROBLEMAS DE LARGURA */
+
+.about-section *,
+.about-section *::before,
+.about-section *::after {
+    box-sizing: border-box;
+}
+
+@media (hover: none) {
+    .about-image:hover img {
+        transform: none;
+    }
+}

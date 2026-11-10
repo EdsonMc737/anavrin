@@ -1,0 +1,334 @@
+
+/* =====================================
+   ANAVRIN — NAVBAR
+===================================== */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    z-index: 9999;
+    background: transparent;
+    font-family: Arial, sans-serif;
+}
+
+.navbar-container {
+    width: 90%;
+    max-width: 1400px;
+    height: 100%;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+}
+
+/* =====================================
+   LOGO
+===================================== */
+
+.navbar-logo {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+
+    color: #F3EBDD;
+    font-family: Georgia, serif;
+    font-size: 27px;
+    letter-spacing: 5px;
+
+    flex-shrink: 0;
+    position: relative;
+    z-index: 10001;
+}
+
+.navbar-logo span {
+    margin-top: 5px;
+
+    color: #D1BE98;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+/* =====================================
+   LINKS DESKTOP
+===================================== */
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu li {
+    list-style: none;
+}
+
+.navbar-menu a {
+    color: #F3EBDD;
+    text-decoration: none;
+
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    transition: color .3s ease;
+}
+
+.navbar-menu a:hover {
+    color: #D1BE98;
+}
+
+/* =====================================
+   BOTÃO AGENDAMENTO DESKTOP
+===================================== */
+
+.navbar-button {
+    padding: 14px 23px;
+
+    border: 1px solid #D1BE98;
+
+    color: #F3EBDD;
+    text-decoration: none;
+
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    transition: all .3s ease;
+}
+
+.navbar-button:hover {
+    background: #F3EBDD;
+    color: #45472F;
+}
+
+/* =====================================
+   BOTÃO HAMBÚRGUER
+===================================== */
+
+.navbar-toggle {
+    display: none;
+
+    width: 44px;
+    height: 44px;
+    padding: 9px;
+
+    border: none;
+    outline: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+
+    position: relative;
+    z-index: 10002;
+}
+
+.navbar-toggle span {
+    display: block;
+
+    width: 26px;
+    height: 2px;
+
+    background: #F3EBDD;
+
+    transition:
+        transform .3s ease,
+        opacity .3s ease;
+}
+
+/* ANIMAÇÃO DO HAMBÚRGUER */
+
+.navbar-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.navbar-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* AGENDAMENTO MOBILE */
+
+.mobile-agendamento {
+    display: none;
+}
+
+/* =====================================
+   TABLETS E CELULARES
+===================================== */
+
+@media (max-width: 850px) {
+
+    .navbar {
+        height: 75px;
+    }
+
+    .navbar-container {
+        width: 90%;
+    }
+
+    /* MOSTRAR HAMBÚRGUER */
+
+    .navbar-toggle {
+        display: flex;
+    }
+
+    /* ESCONDER BOTÃO DESKTOP */
+
+    .navbar-button {
+        display: none;
+    }
+
+    /* MENU MOBILE */
+
+    .navbar-menu {
+        display: none;
+
+        position: absolute;
+
+        top: 100%;
+        left: -5.56%;
+        width: 111.12%;
+
+        box-sizing: border-box;
+
+        padding: 30px 20px 35px;
+        margin: 0;
+
+        background: #45472F;
+
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+
+        list-style: none;
+
+        box-shadow: 0 12px 25px rgba(0,0,0,.20);
+
+        border-bottom: 1px solid rgba(243,235,221,.15);
+
+        z-index: 10000;
+    }
+
+    /* MENU ABERTO */
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    /* LINKS MOBILE */
+
+    .navbar-menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-menu a {
+        display: inline-block;
+
+        padding: 8px 10px;
+
+        color: #F3EBDD;
+
+        font-size: 12px;
+        letter-spacing: 1.8px;
+
+        text-decoration: none;
+
+        transition: color .3s ease;
+    }
+
+    .navbar-menu a:hover {
+        color: #D1BE98;
+    }
+
+    /* AGENDAMENTO MOBILE */
+
+    .mobile-agendamento {
+        display: block;
+
+        width: 100%;
+
+        padding-top: 22px;
+        margin-top: 5px;
+
+        border-top: 1px solid rgba(243,235,221,.2);
+
+        text-align: center;
+    }
+
+    .mobile-agendamento a {
+        color: #D1BE98;
+
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .mobile-agendamento a:hover {
+        color: #F3EBDD;
+    }
+}
+
+/* =====================================
+   CELULARES PEQUENOS
+===================================== */
+
+@media (max-width: 380px) {
+
+    .navbar {
+        height: 70px;
+    }
+
+    .navbar-logo {
+        font-size: 22px;
+        letter-spacing: 3px;
+    }
+
+    .navbar-logo span {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .navbar-toggle {
+        width: 40px;
+        height: 40px;
+    }
+
+    .navbar-toggle span {
+        width: 24px;
+    }
+
+    .navbar-menu {
+        padding: 25px 15px 30px;
+    }
+}
+
+/* =====================================
+   TELAS MUITO LARGAS
+===================================== */
+
+@media (min-width: 1600px) {
+
+    .navbar-container {
+        width: 88%;
+    }
+
+}

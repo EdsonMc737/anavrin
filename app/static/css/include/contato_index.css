@@ -1,0 +1,210 @@
+
+/* ==============================
+   CTA - AGENDAMENTO
+============================== */
+
+.cta-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 570px;
+    padding: 100px 6%;
+    overflow: hidden;
+    background:
+        linear-gradient(
+            rgba(20, 19, 16, 0.91),
+            rgba(20, 19, 16, 0.94)
+        ),
+        url("/static/img/banner/msg_wat.jpg") center/cover no-repeat;
+}
+
+/* DETALHE DECORATIVO */
+
+.cta-section::before {
+    content: "";
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    top: -190px;
+    right: -100px;
+    border: 1px solid rgba(201, 169, 110, 0.15);
+    border-radius: 50%;
+}
+
+.cta-section::after {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    bottom: -150px;
+    left: -80px;
+    border: 1px solid rgba(201, 169, 110, 0.12);
+    border-radius: 50%;
+}
+
+/* CONTEÚDO */
+
+.cta-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cta-label {
+    display: block;
+    margin-bottom: 22px;
+    color: #c9a96e;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+}
+
+.cta-divider {
+    width: 55px;
+    height: 1px;
+    margin: 0 auto 28px;
+    background: #c9a96e;
+}
+
+/* TÍTULO */
+
+.cta-content h2 {
+    margin-bottom: 25px;
+    color: #f5f2ec;
+    font-family: Georgia, serif;
+    font-size: clamp(38px, 5vw, 62px);
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+.cta-content h2 span {
+    display: block;
+    color: #c9a96e;
+    font-style: italic;
+}
+
+/* TEXTOS */
+
+.cta-content > p {
+    max-width: 650px;
+    margin: 0 auto 18px;
+    color: #c6c1b7;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.cta-content .cta-highlight {
+    margin-top: 20px;
+    color: #e0d4bd;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    font-style: italic;
+}
+
+/* BOTÃO */
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    min-height: 58px;
+    margin-top: 35px;
+    padding: 0 32px;
+    background: #c9a96e;
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.35s ease;
+}
+
+.cta-button:hover {
+    background: #e0c38e;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(201, 169, 110, 0.2);
+}
+
+.cta-button i:first-child {
+    font-size: 19px;
+}
+
+.cta-button i:last-child {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover i:last-child {
+    transform: translateX(5px);
+}
+
+/* ASSINATURA */
+
+.cta-footer {
+    display: block;
+    margin-top: 55px;
+    color: rgba(201, 169, 110, 0.65);
+    font-size: 9px;
+    letter-spacing: 4px;
+}
+
+/* ==============================
+   RESPONSIVIDADE
+============================== */
+
+@media (max-width: 768px) {
+    .cta-section {
+        min-height: auto;
+        padding: 85px 7%;
+    }
+
+    .cta-content h2 {
+        font-size: 44px;
+    }
+
+    .cta-content > p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-section {
+        padding: 75px 6%;
+    }
+
+    .cta-label {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .cta-content h2 {
+        font-size: 38px;
+    }
+
+    .cta-content > p {
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .cta-content .cta-highlight {
+        font-size: 14px;
+    }
+
+    .cta-button {
+        width: 100%;
+        gap: 10px;
+        padding: 0 15px;
+        font-size: 12px;
+    }
+
+    .cta-footer {
+        margin-top: 40px;
+        font-size: 8px;
+    }
+}

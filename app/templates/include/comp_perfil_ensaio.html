@@ -1,0 +1,276 @@
+
+
+<!-- PERFIL PRINCIPAL -->
+<section class="therapist-detail">
+
+    <div class="therapist-detail-image">
+        <img
+            src="{{ url_for('static', filename=terapeuta.foto_perfil or terapeuta.foto_apresentacao) }}"
+            alt="Foto de {{ terapeuta.nome }}"
+        >
+
+        <span class="therapist-detail-image-caption">
+            EQUIPE ANAVRIN
+        </span>
+    </div>
+
+    <div class="therapist-detail-content">
+
+        <a href="{{ url_for('home.terapeutas_pro') }}"
+           class="therapist-back-link">
+            ← Voltar para nossa equipe
+        </a>
+
+        <span class="therapist-detail-eyebrow">
+            CONHEÇA NOSSA PROFISSIONAL
+        </span>
+
+        <h1>{{ terapeuta.nome }}</h1>
+
+        <p class="therapist-detail-intro">
+            Cada experiência começa com um cuidado especial.
+            Conheça um pouco mais sobre nossa profissional
+            e descubra como ela pode fazer parte do seu
+            momento Anavrin.
+        </p>
+
+        <div class="therapist-detail-divider"></div>
+
+        <div class="therapist-personal-info">
+
+            {% if terapeuta.unidade %}
+            <div class="therapist-info-item">
+                <span>UNIDADE</span>
+                <strong>{{ terapeuta.unidade }}</strong>
+            </div>
+            {% endif %}
+
+            {% if terapeuta.signo %}
+            <div class="therapist-info-item">
+                <span>SIGNO</span>
+                <strong>{{ terapeuta.signo }}</strong>
+            </div>
+            {% endif %}
+
+            {% if terapeuta.idade %}
+            <div class="therapist-info-item">
+                <span>IDADE</span>
+                <strong>{{ terapeuta.idade }} anos</strong>
+            </div>
+            {% endif %}
+
+            {% if terapeuta.experiencia %}
+            <div class="therapist-info-item">
+                <span>EXPERIÊNCIA</span>
+                <strong>{{ terapeuta.experiencia }}</strong>
+            </div>
+            {% endif %}
+
+        </div>
+
+        {% if terapeuta.status_equipe == "NOVA" %}
+            <span class="therapist-detail-status">
+                Nova integrante Anavrin
+            </span>
+        {% elif terapeuta.status_equipe == "RET" %}
+            <span class="therapist-detail-status">
+                De volta à Anavrin
+            </span>
+        {% elif terapeuta.status_equipe == "VET" %}
+            <span class="therapist-detail-status">
+                Veterana Anavrin
+            </span>
+        {% endif %}
+
+        <a href="{{ url_for('home.home_index') }}#agendamento"
+           class="therapist-detail-button">
+            Agende sua experiência <span> </span>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ENSAIO FOTOGRÁFICO -->
+<section class="therapist-editorial">
+
+    <div class="therapist-editorial-header">
+
+        <span class="therapist-detail-eyebrow">
+            ESSÊNCIA ANAVRIN
+        </span>
+
+        <h2>
+            Um olhar sobre
+            <span>nossa profissional</span>
+        </h2>
+
+        <p>
+            Cada detalhe revela uma essência.
+            Conheça nossa profissional através deste ensaio especial.
+        </p>
+
+    </div>
+
+    {% if fotografias %}
+
+    <div class="therapist-editorial-grid">
+
+        {% for foto in fotografias %}
+
+        <figure class="editorial-photo editorial-photo-{{ loop.index }}">
+
+            <img
+                src="{{ url_for('static', filename=foto.foto) }}"
+                alt="{{ foto.descricao }} - {{ terapeuta.nome }}"
+                loading="lazy"
+            >
+
+            {% if foto.descricao %}
+            <figcaption>
+                {{ foto.descricao }}
+            </figcaption>
+            {% endif %}
+
+        </figure>
+
+        {% endfor %}
+
+    </div>
+
+    {% else %}
+
+    <div class="therapist-editorial-empty">
+        <p>
+            O ensaio fotográfico desta profissional
+            será disponibilizado em breve.
+        </p>
+    </div>
+
+    {% endif %}
+
+</section>
+
+
+<!-- ESPECIALIDADES -->
+<section class="therapist-specialties-section">
+
+    <div class="therapist-specialties-header">
+
+        <span class="therapist-detail-eyebrow">
+            CUIDADO E BEM-ESTAR
+        </span>
+
+        <h2>
+            Especialidades
+            <span>e atendimentos</span>
+        </h2>
+
+        <p>
+            Conheça as experiências que nossa profissional
+            está preparada para proporcionar.
+        </p>
+
+    </div>
+
+    <div class="therapist-specialties-list">
+
+        {% for atendimento in terapeuta.tipos_atendimento %}
+
+            <div class="therapist-specialty-item">
+                <span>✧</span>
+                {{ atendimento }}
+            </div>
+
+        {% else %}
+
+            <p>
+                As informações sobre os atendimentos desta
+                profissional serão atualizadas em breve.
+            </p>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+<!-- ENCERRAMENTO -->
+<section class="therapist-detail-quote">
+
+    <span>ESSÊNCIA ANAVRIN</span>
+
+    <h2>
+        Seu momento de cuidado
+        <em>começa aqui.</em>
+    </h2>
+
+    <p>
+        Permita-se desacelerar, respirar e viver
+        uma experiência pensada para você.
+    </p>
+
+    <a href="{{ url_for('home.home_index') }}#agendamento">
+        Viva sua experiência Anavrin  
+    </a>
+
+</section>
+<script src="{{ url_for('static', filename='js/include/comp_perfil_ensaio.js') }}" defer></script>
+
+
+<!-- LIGHTBOX ANAVRIN -->
+<div
+    class="anavrin-lightbox"
+    id="anavrinLightbox"
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Galeria de fotografias"
+>
+    <button
+        type="button"
+        class="lightbox-close"
+        id="lightboxClose"
+        aria-label="Fechar galeria"
+    >
+        &times;
+    </button>
+
+    <button
+        type="button"
+        class="lightbox-nav lightbox-prev"
+        id="lightboxPrev"
+        aria-label="Fotografia anterior"
+    >
+        &#10094;
+    </button>
+
+    <div class="lightbox-content">
+
+        <img
+            src=""
+            alt=""
+            id="lightboxImage"
+        >
+
+        <div class="lightbox-information">
+            <p id="lightboxDescription"></p>
+            <span id="lightboxCounter"></span>
+        </div>
+
+    </div>
+
+    <button
+        type="button"
+        class="lightbox-nav lightbox-next"
+        id="lightboxNext"
+        aria-label="Próxima fotografia"
+    >
+        &#10095;
+    </button>
+
+</div>
+
+
