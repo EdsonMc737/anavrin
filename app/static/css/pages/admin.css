@@ -1,0 +1,431 @@
+
+/* =========================================
+   ANAVRIN - PAINEL ADMINISTRATIVO
+   CSS ISOLADO
+   ========================================= */
+
+/* =========================================
+   CONFIGURAÇÕES GERAIS
+   ========================================= */
+
+.admin-login-page,
+.admin-page {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    color: #282820;
+}
+
+.admin-login-page *,
+.admin-page * {
+    box-sizing: border-box;
+}
+
+/* =========================================
+   LOGIN ADMINISTRATIVO
+   ========================================= */
+
+.admin-login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: #f5f3ef;
+}
+
+.admin-login-page .login-container {
+    width: 100%;
+    max-width: 430px;
+}
+
+.admin-login-page .login-card {
+    width: 100%;
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .07);
+}
+
+.admin-login-page .login-card h1 {
+    letter-spacing: 5px;
+    color: #77704f;
+    margin: 0;
+}
+
+.admin-login-page .login-subtitle {
+    margin: 12px 0 30px;
+    color: #777;
+}
+
+.admin-login-page .login-card label {
+    display: block;
+    margin: 18px 0 7px;
+    color: #383629;
+    font-size: 14px;
+}
+
+.admin-login-page .login-card input {
+    display: block;
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fff;
+    color: #282820;
+    font-size: 14px;
+    outline: none;
+}
+
+.admin-login-page .login-card input:focus {
+    border-color: #77704f;
+    box-shadow: 0 0 0 3px rgba(119, 112, 79, .12);
+}
+
+.admin-login-page .admin-button {
+    display: inline-block;
+    width: 100%;
+    margin-top: 25px;
+    padding: 12px 18px;
+    border: 0;
+    border-radius: 6px;
+    background: #77704f;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    transition: background .2s ease;
+}
+
+.admin-login-page .admin-button:hover {
+    background: #5e583e;
+}
+
+.admin-login-page .back-site {
+    display: block;
+    margin-top: 25px;
+    text-align: center;
+    color: #77704f;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.admin-login-page .back-site:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   ESTRUTURA ADMINISTRATIVA
+   ========================================= */
+
+.admin-page {
+    min-height: 100vh;
+    padding: 1px 0;
+    background: #f5f3ef;
+}
+
+.admin-header {
+    background: #fff;
+    padding: 22px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid #e8e5dd;
+}
+
+.admin-header h1 {
+    margin: 0;
+    letter-spacing: 5px;
+    color: #77704f;
+}
+
+.admin-header span {
+    color: #777;
+    font-size: 13px;
+}
+
+.admin-logo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    letter-spacing: 4px;
+    color: #77704f;
+    font-weight: bold;
+}
+
+.admin-logo span {
+    letter-spacing: 1px;
+    font-weight: normal;
+}
+
+.admin-user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.admin-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 45px auto;
+}
+
+/* =========================================
+   DASHBOARD
+   ========================================= */
+
+.admin-welcome {
+    margin-bottom: 30px;
+}
+
+.admin-welcome h2 {
+    color: #383629;
+}
+
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.admin-page .stat-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.admin-page .stat-card span {
+    color: #777;
+}
+
+.admin-page .stat-card strong {
+    font-size: 32px;
+    color: #77704f;
+}
+
+.admin-actions {
+    background: #fff;
+    padding: 25px;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+.admin-actions a {
+    margin: 8px 8px 0 0;
+}
+
+/* =========================================
+   BOTÕES
+   ========================================= */
+
+.admin-page .secondary-button,
+.admin-page .logout-button,
+.admin-page .activate-button,
+.admin-page .deactivate-button,
+.admin-page .archive-button {
+    display: inline-block;
+    border: 0;
+    border-radius: 6px;
+    padding: 12px 18px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+    transition: background .2s ease, opacity .2s ease;
+}
+
+.admin-page .secondary-button {
+    background: #e8e5dd;
+    color: #383629;
+}
+
+.admin-page .secondary-button:hover {
+    background: #dcd8ce;
+}
+
+.admin-page .logout-button {
+    background: #eee;
+    color: #333;
+}
+
+.admin-page .logout-button:hover {
+    background: #ddd;
+}
+
+.admin-page .activate-button {
+    background: #39734c;
+    color: #fff;
+}
+
+.admin-page .activate-button:hover {
+    background: #2d5d3c;
+}
+
+.admin-page .deactivate-button {
+    background: #a34a4a;
+    color: #fff;
+}
+
+.admin-page .deactivate-button:hover {
+    background: #853838;
+}
+
+.admin-page .archive-button {
+    background: #e8e5dd;
+    color: #333;
+}
+
+.admin-page .archive-button:hover {
+    background: #d8d3c8;
+}
+
+/* =========================================
+   GERENCIAMENTO DE TERAPEUTAS
+   ========================================= */
+
+.admin-page .admin-page-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.admin-page .therapists-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Classes isoladas para não atingir os cards públicos */
+
+.admin-page .therapist-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.admin-page .therapist-info {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.admin-page .therapist-info h3 {
+    margin: 0 0 8px;
+    color: #383629;
+}
+
+.admin-page .therapist-info p {
+    color: #777;
+    font-size: 12px;
+}
+
+.admin-page .therapist-photo {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.admin-page .status-label {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.admin-page .status-active {
+    color: #39734c;
+}
+
+.admin-page .status-inactive {
+    color: #a34a4a;
+}
+
+.admin-page .therapist-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* =========================================
+   MENSAGENS E ALERTAS
+   ========================================= */
+
+.admin-page .admin-alert {
+    padding: 12px;
+    margin: 15px 0;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.admin-page .admin-alert.danger {
+    background: #f8dddd;
+    color: #842929;
+}
+
+.admin-page .admin-alert.success {
+    background: #dff1e3;
+    color: #28623a;
+}
+
+/* =========================================
+   RESPONSIVIDADE
+   ========================================= */
+
+@media (max-width: 750px) {
+
+    .admin-page .admin-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .admin-page .therapist-card,
+    .admin-page .admin-page-title {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .admin-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .admin-page .therapist-actions {
+        width: 100%;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .admin-login-page .login-card {
+        padding: 25px;
+    }
+
+    .admin-page .admin-content {
+        width: 92%;
+        margin: 25px auto;
+    }
+
+    .admin-page .admin-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-page .therapist-info {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .admin-page .admin-user {
+        flex-wrap: wrap;
+    }
+
+    .admin-page .therapist-actions button {
+        flex: 1;
+    }
+}

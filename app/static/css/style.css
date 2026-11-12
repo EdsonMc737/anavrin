@@ -1,7 +1,9 @@
 @import url('pages/reset.css');
 @import url('pages/index.css');
 @import url('pages/massagens.css');
+@import url('pages/unidades.css');
 
+@import url('pages/admin.css');
 
 @import url('include/navmenu.css');
 @import url('include/banner.css');

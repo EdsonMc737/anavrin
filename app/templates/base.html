@@ -14,17 +14,14 @@
     <title>Anavrin | Spa & Bem-Estar</title>
 
     <!-- CSS PRINCIPAL -->
-    <link
-        rel="stylesheet"
-        href="{{ url_for('static', filename='css/style.css') }}"
-    >
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
 
     <!-- FONT AWESOME -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    >
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
+    <!-- CSS ESPECÍFICO DE CADA PÁGINA -->
     {% block extra_css %}{% endblock %}
 
 </head>
@@ -32,7 +29,9 @@
 <body>
 
     <!-- NAVBAR -->
-    {% include 'include/navmenu.html' %}
+    {% block navbar %}
+        {% include 'include/navmenu.html' %}
+    {% endblock %}
 
     <!-- CONTEÚDO PRINCIPAL -->
     <main>
@@ -41,7 +40,9 @@
     </main>
 
     <!-- FOOTER -->
-    {% include 'include/rodape.html' %}
+    {% block footer %}
+        {% include 'include/rodape.html' %}
+    {% endblock %}
 
     <!-- JAVASCRIPT DA NAVBAR -->
     <script

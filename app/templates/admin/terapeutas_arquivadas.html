@@ -1,0 +1,97 @@
+
+{% extends 'base_admin.html' %}
+
+{% block content %}
+
+<div class="admin-page-title">
+    <div>
+        <h2>Terapeutas arquivadas</h2>
+        <p>Consulte e reative profissionais que foram arquivadas.</p>
+    </div>
+
+    <a href="{{ url_for('admin.terapeutas') }}" class="secondary-button">
+        Voltar para terapeutas
+    </a>
+</div>
+
+{% with mensagens = get_flashed_messages(with_categories=true) %}
+    {% if mensagens %}
+        {% for categoria, mensagem in mensagens %}
+            <div class="alert alert-{{ categoria }}">
+                {{ mensagem }}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<section class="therapists-list">
+
+    {% for terapeuta in terapeutas %}
+
+        <article class="therapist-card">
+
+            <div class="therapist-info">
+
+                {% set foto = terapeuta.get('foto_perfil') or terapeuta.get('foto_apresentacao') %}
+
+                {% if foto %}
+                    <img
+                        src="{{ url_for('static', filename=foto) }}"
+                        alt="Foto de {{ terapeuta.nome }}"
+                        class="therapist-photo"
+                    >
+                {% endif %}
+
+                <div>
+                    <h3>{{ terapeuta.nome }}</h3>
+
+                    <p>
+                        <strong>ID:</strong> {{ terapeuta.id }}
+                    </p>
+
+                    <p>
+                        <strong>Unidade:</strong>
+                        {{ terapeuta.unidade or 'Não informada' }}
+                    </p>
+
+                    <span class="status inactive">
+                        Arquivada
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="therapist-actions">
+
+                <form
+                    method="POST"
+                    action="{{ url_for(
+                        'admin.reativar_terapeuta',
+                        terapeuta_id=terapeuta.id
+                    ) }}"
+                    onsubmit="return confirm('Deseja reativar esta terapeuta?');"
+                >
+                    <input
+                        type="hidden"
+                        name="csrf_token"
+                        value="{{ csrf_token }}"
+                    >
+
+                    <button type="submit" class="activate-button">
+                        Reativar
+                    </button>
+                </form>
+
+            </div>
+
+        </article>
+
+    {% else %}
+
+        <p>Nenhuma terapeuta arquivada.</p>
+
+    {% endfor %}
+
+</section>
+
+{% endblock %}

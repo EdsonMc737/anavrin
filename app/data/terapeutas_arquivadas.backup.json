@@ -1,0 +1,19 @@
+[
+  {
+    "id": "ANV-TRP-0001",
+    "status_equipe": "NOVA",
+    "foto_apresentacao": "img/terapeutas/RitaLorena/principal/RitaLorena.jpg",
+    "foto_perfil": "img/terapeutas/RitaLorena/perfil/RitaLorena.jpg",
+    "nome": "Rita Lorena Marcela",
+    "signo": "Aquário",
+    "unidade": "Jardins",
+    "idade": 23,
+    "experiencia": "",
+    "tipos_atendimento": [
+      "Four Hands",
+      "Massagem Relaxante",
+      "Jacuzzi & Ofurô — Sessão Premium"
+    ],
+    "ativo": false
+  }
+]

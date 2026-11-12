@@ -1,0 +1,57 @@
+{% extends 'base_admin.html' %}
+
+{% block content %}
+
+
+
+    <main class="admin-content">
+
+        <section class="admin-welcome">
+            <h2>Dashboard</h2>
+            <p>Gerencie a equipe e acompanhe as profissionais da Anavrin.</p>
+        </section>
+
+        <section class="admin-stats">
+
+            <article class="stat-card">
+                <span>Total cadastradas</span>
+                <strong>{{ total }}</strong>
+            </article>
+
+            <article class="stat-card">
+                <span>Ativas</span>
+                <strong>{{ ativas }}</strong>
+            </article>
+
+            <article class="stat-card">
+                <span>Inativas</span>
+                <strong>{{ inativas }}</strong>
+            </article>
+
+            <article class="stat-card">
+                <span>Arquivadas</span>
+                <strong>{{ arquivadas }}</strong>
+            </article>
+
+        </section>
+
+        <section class="admin-actions">
+
+            <h3>Gerenciamento</h3>
+
+            <a href="{{ url_for('admin.terapeutas') }}"
+               class="admin-button">
+                Gerenciar terapeutas
+            </a>
+
+            <a href="{{ url_for('home.home_index') }}"
+               class="secondary-button">
+                Visualizar site
+            </a>
+
+        </section>
+
+    </main>
+{% endblock %}
+
+

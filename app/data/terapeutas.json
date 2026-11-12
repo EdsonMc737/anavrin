@@ -1,4 +1,3 @@
-
 {
   "catalogo_atendimentos": [
     "Four Hands",
@@ -14,22 +13,6 @@
   ],
   "terapeutas": [
     {
-      "id": "ANV-TRP-0001",
-      "status_equipe": "NOVA",
-      "foto_apresentacao": "img/terapeutas/RitaLorena/principal/RitaLorena.jpg",
-      "foto_perfil": "img/terapeutas/RitaLorena/perfil/RitaLorena.jpg",
-      "nome": "Rita Lorena Marcela",
-      "signo": "Aquário",
-      "unidade": "Jardins",
-      "idade": 23,
-      "experiencia": "",
-      "tipos_atendimento": [ 
-        "Four Hands",
-        "Massagem Relaxante",
-        "Jacuzzi & Ofurô — Sessão Premium"
-      ]
-    },
-    {
       "id": "ANV-TRP-0002",
       "status_equipe": "NOVA",
       "foto_apresentacao": "img/terapeutas/AndreaBrito/principal/AndreaBrito.jpg",
@@ -39,11 +22,13 @@
       "unidade": "Jardins",
       "idade": 25,
       "experiencia": "",
-      "tipos_atendimento": [ 
+      "tipos_atendimento": [
         "Four Hands",
         "Massagem Relaxante",
         "Massagem Personalizada",
-        "Sessão Casal"]
+        "Sessão Casal"
+      ],
+      "ativo": true
     },
     {
       "id": "ANV-TRP-0003",
@@ -164,6 +149,23 @@
       "idade": 27,
       "experiencia": "",
       "tipos_atendimento": []
+    },
+    {
+      "id": "ANV-TRP-0001",
+      "status_equipe": "NOVA",
+      "foto_apresentacao": "img/terapeutas/RitaLorena/principal/RitaLorena.jpg",
+      "foto_perfil": "img/terapeutas/RitaLorena/perfil/RitaLorena.jpg",
+      "nome": "Rita Lorena Marcela",
+      "signo": "Aquário",
+      "unidade": "Jardins",
+      "idade": 23,
+      "experiencia": "",
+      "tipos_atendimento": [
+        "Four Hands",
+        "Massagem Relaxante",
+        "Jacuzzi & Ofurô — Sessão Premium"
+      ],
+      "ativo": true
     }
   ]
 }

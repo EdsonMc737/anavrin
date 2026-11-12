@@ -5,7 +5,7 @@ from pathlib import Path
 from flask import Blueprint, abort, current_app, render_template
 
 
-home_bp = Blueprint('home', __name__)
+home_bp = Blueprint("home", __name__)
 
 
 # ==================================================
@@ -13,7 +13,6 @@ home_bp = Blueprint('home', __name__)
 # ==================================================
 
 def carregar_terapeutas():
-
     arquivo_json = (
         Path(current_app.root_path)
         / "data"
@@ -26,15 +25,26 @@ def carregar_terapeutas():
     return dados
 
 
+def terapeutas_ativas(dados):
+    """
+    Retorna somente terapeutas ativas.
+
+    Cadastros antigos sem o campo 'ativo'
+    continuam ativos por padrão.
+    """
+    return [
+        terapeuta
+        for terapeuta in dados.get("terapeutas", [])
+        if terapeuta.get("ativo", True)
+    ]
+
+
 def carregar_catalogo_atendimentos():
-
     dados = carregar_terapeutas()
-
     return dados.get("catalogo_atendimentos", [])
 
 
 def carregar_ensaios():
-
     arquivo_json = (
         Path(current_app.root_path)
         / "data"
@@ -63,7 +73,6 @@ def carregar_fotografias_ensaio(terapeuta):
         return []
 
     caminho_foto = Path(foto_principal)
-
     partes = caminho_foto.parts
 
     if (
@@ -94,27 +103,31 @@ def carregar_fotografias_ensaio(terapeuta):
         [
             arquivo
             for arquivo in pasta_ensaio.iterdir()
-            if arquivo.is_file()
-            and arquivo.suffix.lower() in extensoes
+            if (
+                arquivo.is_file()
+                and arquivo.suffix.lower() in extensoes
+            )
         ],
-        key=lambda arquivo: arquivo.name.lower()
+        key=lambda arquivo: arquivo.name.lower(),
     )
 
     for ordem, arquivo in enumerate(arquivos, start=1):
 
-        fotografias.append({
-            "foto": (
-                f"img/terapeutas/{pasta_terapeuta}"
-                f"/ensaio/{arquivo.name}"
-            ),
-            "descricao": (
-                arquivo.stem
-                .replace("_", " ")
-                .replace("-", " ")
-                .title()
-            ),
-            "ordem": ordem
-        })
+        fotografias.append(
+            {
+                "foto": (
+                    f"img/terapeutas/{pasta_terapeuta}"
+                    f"/ensaio/{arquivo.name}"
+                ),
+                "descricao": (
+                    arquivo.stem
+                    .replace("_", " ")
+                    .replace("-", " ")
+                    .title()
+                ),
+                "ordem": ordem,
+            }
+        )
 
     return fotografias
 
@@ -123,17 +136,17 @@ def carregar_fotografias_ensaio(terapeuta):
 # PÁGINA INICIAL
 # ==================================================
 
-@home_bp.route('/')
+@home_bp.route("/")
 def home_index():
 
     dados = carregar_terapeutas()
 
-    terapeutas = dados.get("terapeutas", [])
+    terapeutas = terapeutas_ativas(dados)
 
     return render_template(
         "pages/index.html",
         title="Home Page",
-        terapeutas=terapeutas
+        terapeutas=terapeutas,
     )
 
 
@@ -141,22 +154,23 @@ def home_index():
 # PÁGINA DE TODAS AS TERAPEUTAS
 # ==================================================
 
-@home_bp.route('/terapeutas')
+@home_bp.route("/terapeutas")
 def terapeutas_pro():
 
     dados = carregar_terapeutas()
 
-    terapeutas = dados.get("terapeutas", [])
+    terapeutas = terapeutas_ativas(dados)
 
     catalogo_atendimentos = dados.get(
-        "catalogo_atendimentos", []
+        "catalogo_atendimentos",
+        [],
     )
 
     return render_template(
         "pages/profissionais.html",
         title="Nossas Profissionais",
         terapeutas=terapeutas,
-        catalogo_atendimentos=catalogo_atendimentos
+        catalogo_atendimentos=catalogo_atendimentos,
     )
 
 
@@ -164,21 +178,23 @@ def terapeutas_pro():
 # PERFIL INDIVIDUAL DA TERAPEUTA
 # ==================================================
 
-@home_bp.route('/terapeutas/<string:terapeuta_id>')
+@home_bp.route("/terapeutas/<string:terapeuta_id>")
 def perfil_terapeuta(terapeuta_id):
 
     dados = carregar_terapeutas()
 
-    terapeutas = dados.get("terapeutas", [])
+    terapeutas = terapeutas_ativas(dados)
 
     terapeuta = next(
         (
-            item for item in terapeutas
+            item
+            for item in terapeutas
             if item.get("id") == terapeuta_id
         ),
-        None
+        None,
     )
 
+    # Terapeuta inexistente ou desativada
     if terapeuta is None:
         abort(404)
 
@@ -186,38 +202,39 @@ def perfil_terapeuta(terapeuta_id):
 
     ensaio = next(
         (
-            item for item in ensaios
-            if item.get("id") == terapeuta.get("ensaio_id")
-            and item.get("terapeuta_id") == terapeuta_id
+            item
+            for item in ensaios
+            if (
+                item.get("id") == terapeuta.get("ensaio_id")
+                and item.get("terapeuta_id") == terapeuta_id
+            )
         ),
-        None
+        None,
     )
 
     fotografias = carregar_fotografias_ensaio(terapeuta)
 
-    # ==================================================
-    # OUTRAS TERAPEUTAS
-    # ==================================================
-
+    # Outras terapeutas: somente as ativas
     outras_terapeutas = [
-        item for item in terapeutas
+        item
+        for item in terapeutas
         if item.get("id") != terapeuta_id
     ]
 
-    # ==================================================
-    # ENVIO DOS DADOS PARA O TEMPLATE
-    # ==================================================
-
     return render_template(
         "pages/perfil_terapeuta.html",
-        title=terapeuta.get("nome", "Perfil da terapeuta"),
+        title=terapeuta.get(
+            "nome",
+            "Perfil da terapeuta",
+        ),
         terapeuta=terapeuta,
         ensaio=ensaio,
         fotografias=fotografias,
         outras_terapeutas=outras_terapeutas,
         catalogo_atendimentos=dados.get(
-            "catalogo_atendimentos", []
-        )
+            "catalogo_atendimentos",
+            [],
+        ),
     )
 
 
@@ -225,20 +242,19 @@ def perfil_terapeuta(terapeuta_id):
 # PÁGINA DE MASSAGENS E EXPERIÊNCIAS
 # ==================================================
 
-@home_bp.route('/massagens')
+@home_bp.route("/massagens")
 def massagens():
 
     dados = carregar_terapeutas()
 
-    # Obtém as cinco categorias cadastradas no JSON
     catalogo_atendimentos = dados.get(
-        "catalogo_atendimentos", []
+        "catalogo_atendimentos",
+        [],
     )
 
-    # Obtém todas as terapeutas
-    terapeutas = dados.get("terapeutas", [])
+    # Somente terapeutas ativas
+    terapeutas = terapeutas_ativas(dados)
 
-    # Organiza as terapeutas por atendimento
     terapeutas_por_atendimento = {}
 
     for atendimento in catalogo_atendimentos:
@@ -256,5 +272,23 @@ def massagens():
         title="Massagens e Experiências | Anavrin",
         catalogo_atendimentos=catalogo_atendimentos,
         terapeutas=terapeutas,
-        terapeutas_por_atendimento=terapeutas_por_atendimento
+        terapeutas_por_atendimento=terapeutas_por_atendimento,
+    )
+
+
+# ==================================================
+# PÁGINA DE UNIDADES
+# ==================================================
+
+@home_bp.route("/unidades")
+def unidades():
+
+    dados = carregar_terapeutas()
+
+    outras_terapeutas = terapeutas_ativas(dados)
+
+    return render_template(
+        "pages/unidades.html",
+        title="Nossas Unidades | Anavrin",
+        outras_terapeutas=outras_terapeutas,
     )

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "ADM-0001",
+    "nome": "Administrador Principal",
+    "email": "admin@anavrin.com.br",
+    "senha_hash": "HASH_DA_SENHA",
+    "ativo": true
+  },
+  {
+    "id": "ADM-0E3766FC",
+    "nome": "edson",
+    "email": "edsonm737@gmail.com",
+    "senha_hash": "scrypt:32768:8:1$4r6VwQKn8ZPkHT4f$c9c6785666fb904d94e1aae437934436205d8b53bf17173355b1cbae4701a4afdc6347dadbeca6da34492fd4fd5c8bfc18a11062519d13bcf304d820e8302ce6",
+    "ativo": true
+  },
+  {
+    "id": "ADM-654934AA",
+    "nome": "edson moreira",
+    "email": "edsonmoreira90@hotmail.com",
+    "senha_hash": "scrypt:32768:8:1$wLOdU9yxxxYDvwTT$550842a4550c08676ca1090db49121f95a7a0897bf822a986a94e385f576afa8a851cfbacb4bd230f383849e1abf3a01e9295f81a017e3f7763325353ab15563",
+    "ativo": true
+  }
+]

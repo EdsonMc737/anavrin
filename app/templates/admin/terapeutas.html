@@ -1,0 +1,167 @@
+
+{% extends 'base_admin.html' %}
+
+{% block admin_header %}
+    <div class="admin-user">
+        <span>Olá, {{ admin_nome }}</span>
+
+        <form method="POST" action="{{ url_for('admin.logout') }}">
+            <input
+                type="hidden"
+                name="csrf_token"
+                value="{{ csrf_token }}"
+            >
+
+            <button type="submit" class="logout-button">
+                Sair
+            </button>
+        </form>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="admin-page-title">
+
+        <div>
+            <h2>Terapeutas</h2>
+            <p>Ative, desative ou arquive profissionais.</p>
+        </div>
+
+        <div class="therapist-actions">
+
+            <a
+                href="{{ url_for('admin.dashboard') }}"
+                class="secondary-button"
+            >
+                Voltar ao dashboard
+            </a>
+
+            <a
+                href="{{ url_for('admin.terapeutas_arquivadas') }}"
+                class="secondary-button"
+            >
+                Ver terapeutas arquivadas
+            </a>
+
+        </div>
+
+    </div>
+
+
+    {% with mensagens = get_flashed_messages(with_categories=true) %}
+        {% if mensagens %}
+            {% for categoria, mensagem in mensagens %}
+                <div class="admin-alert {{ categoria }}">
+                    {{ mensagem }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+
+    <section class="therapists-list">
+
+        {% for terapeuta in terapeutas %}
+
+            <article class="therapist-card">
+
+                <div class="therapist-info">
+
+                    {% set foto = terapeuta.get('foto_perfil') or terapeuta.get('foto_apresentacao') %}
+
+                    {% if foto %}
+                        <img
+                            src="{{ url_for('static', filename=foto) }}"
+                            alt="{{ terapeuta.get('nome', 'Terapeuta') }}"
+                            class="therapist-photo"
+                        >
+                    {% endif %}
+
+                    <div>
+
+                        <h3>
+                            {{ terapeuta.get('nome', 'Sem nome') }}
+                        </h3>
+
+                        <p>
+                            ID: {{ terapeuta.get('id', '-') }}
+                        </p>
+
+                        <span class="status-label {{ 'status-active' if terapeuta.get('ativo', true) else 'status-inactive' }}">
+                            {{ 'Ativa' if terapeuta.get('ativo', true) else 'Inativa' }}
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="therapist-actions">
+
+                    <!-- ATIVAR / DESATIVAR -->
+
+                    <form
+                        method="POST"
+                        action="{{ url_for(
+                            'admin.alternar_terapeuta',
+                            terapeuta_id=terapeuta.id
+                        ) }}"
+                    >
+
+                        <input
+                            type="hidden"
+                            name="csrf_token"
+                            value="{{ csrf_token }}"
+                        >
+
+                        <button
+                            type="submit"
+                            class="{{ 'deactivate-button' if terapeuta.get('ativo', true) else 'activate-button' }}"
+                        >
+                            {{ 'Desativar' if terapeuta.get('ativo', true) else 'Ativar' }}
+                        </button>
+
+                    </form>
+
+
+                    <!-- ARQUIVAR -->
+
+                    <form
+                        method="POST"
+                        action="{{ url_for(
+                            'admin.arquivar_terapeuta',
+                            terapeuta_id=terapeuta.id
+                        ) }}"
+                        onsubmit="return confirm('Deseja realmente arquivar esta terapeuta? Ela será retirada do cadastro público.');"
+                    >
+
+                        <input
+                            type="hidden"
+                            name="csrf_token"
+                            value="{{ csrf_token }}"
+                        >
+
+                        <button
+                            type="submit"
+                            class="archive-button"
+                        >
+                            Arquivar
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </article>
+
+        {% else %}
+
+            <p>Nenhuma terapeuta cadastrada.</p>
+
+        {% endfor %}
+
+    </section>
+
+{% endblock %}
